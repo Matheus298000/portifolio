@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio e Currículo Profissional de Matheus Giovanni Azevedo Magalhães - Estudante Técnico em Desenvolvimento de Sistemas na Etec de Itaquera, focado em Desenvolvimento de Software, Lógica e Inovação.">
+  <meta name="author" content="Matheus Giovanni Azevedo Magalhães">
+  <meta name="keywords" content="Matheus Giovanni, Desenvolvedor de Software, Estágio Tecnologia, Java, Python, C#, Etec de Itaquera, CASSI, Programador Júnior">
+  <meta name="theme-color" content="#0a0f1d">
+  
+  <title>Matheus Giovanni | Portfólio & Currículo - Desenvolvedor de Software</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+  <!-- Header / Navigation -->
+  <header class="header" id="navbar">
+    <div class="container header-container">
+      <a href="#hero" class="logo" aria-label="Página inicial">
+        <span class="logo-symbol">&lt;</span>
+        <span class="logo-text">Matheus<span class="accent-text">.dev</span></span>
+        <span class="logo-symbol">/&gt;</span>
+      </a>
+
+      <nav class="nav" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li class="nav-item"><a href="#experiencia" class="nav-link">Experiência</a></li>
+          <li class="nav-item"><a href="#formacao" class="nav-link">Formação</a></li>
+          <li class="nav-item"><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li class="nav-item"><a href="#certificados" class="nav-link">Cursos</a></li>
+          <li class="nav-item"><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+          <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Print / PDF Resume Button -->
+        <button id="print-btn" class="action-btn" title="Imprimir / Salvar Currículo em PDF" aria-label="Imprimir Currículo">
+          <i class="fa-solid fa-print"></i>
+          <span class="btn-text">Imprimir / PDF</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-btn" title="Alternar Modo Claro/Escuro" aria-label="Alternar tema">
+          <i class="fa-solid fa-moon theme-icon-dark"></i>
+          <i class="fa-solid fa-sun theme-icon-light"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Abrir menu de navegação">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-glow hero-glow-1"></div>
+      <div class="hero-bg-glow hero-glow-2"></div>
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Availability Badge -->
+          <div class="status-badge" data-aos="fade-down">
+            <span class="status-dot"></span>
+            <span class="status-text">Disponível para Estágio & Início de Carreira em Tecnologia</span>
+          </div>
+
+          <h1 class="hero-title">
+            Olá, eu sou <br>
+            <span class="gradient-text">Matheus Giovanni</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Estudante de <strong>Desenvolvimento de Sistemas</strong> na <strong>Etec de Itaquera</strong>, com experiência corporativa em análise de fluxos na <strong>CASSI</strong>. Focado em desenvolvimento de software, algoritmos, bancos de dados e inteligência artificial.
+          </p>
+
+          <!-- Contact Quick Info Bar -->
+          <div class="hero-quick-info">
+            <div class="info-pill">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>São Paulo - SP</span>
+            </div>
+            <div class="info-pill">
+              <i class="fa-solid fa-calendar-day"></i>
+              <span>17/08/2009</span>
+            </div>
+            <a href="tel:+5511994723395" class="info-pill interactive">
+              <i class="fa-solid fa-phone"></i>
+              <span>+55 (11) 99472-3395</span>
+            </a>
+            <div class="info-pill interactive" id="copy-email-hero" title="Clique para copiar e-mail">
+              <i class="fa-solid fa-envelope"></i>
+              <span>matheusmgamg@gmail.com</span>
+              <i class="fa-regular fa-copy copy-icon"></i>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-actions">
+            <a href="https://wa.me/5511994723395?text=Ol%C3%A1%20Matheus!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+            </a>
+            <a href="#experiencia" class="btn btn-secondary">
+              <i class="fa-solid fa-briefcase"></i> Ver Trajetória
+            </a>
+            <a href="https://github.com/Matheus298000" target="_blank" rel="noopener noreferrer" class="btn btn-outline" title="Acessar GitHub">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/matheus-giovanni-azevedo-magalh%C3%A3es-445437388?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="btn btn-outline" title="Acessar LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+            </a>
+          </div>
+
+          <!-- Highlight Metric Counters -->
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <div class="metric-number">2º Ano</div>
+              <div class="metric-label">Técnico em Sistemas (Etec)</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-number">CASSI</div>
+              <div class="metric-label">Experiência Corporativa Real</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-number">7+</div>
+              <div class="metric-label">Linguagens & Tecnologias</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-number">11+</div>
+              <div class="metric-label">Certificações (USP, Accenture, DIO)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="code-window">
+            <div class="window-header">
+              <div class="window-dot dot-red"></div>
+              <div class="window-dot dot-yellow"></div>
+              <div class="window-dot dot-green"></div>
+              <span class="window-title">MatheusResume.java</span>
+            </div>
+            <div class="window-body">
+              <pre><code><span class="code-kw">public class</span> <span class="code-class">MatheusGiovanni</span> {
+  <span class="code-kw">public static void</span> <span class="code-fn">main</span>(String[] args) {
+    Developer dev = <span class="code-kw">new</span> Developer();
+    dev.setNome(<span class="code-str">"Matheus Giovanni"</span>);
+    dev.setFormacao(<span class="code-str">"Etec de Itaquera"</span>);
+    dev.setEmpresaAtual(<span class="code-str">"CASSI"</span>);
+    
+    <span class="code-comment">// Habilidades & Foco</span>
+    dev.addStack(List.of(
+      <span class="code-str">"Java"</span>, <span class="code-str">"Python"</span>, <span class="code-str">"C#"</span>,
+      <span class="code-str">"JavaScript"</span>, <span class="code-str">"SQL"</span>, <span class="code-str">"IA"</span>
+    ));
+    
+    dev.setObjetivo(<span class="code-str">"Estágio em Desenvolvimento"</span>);
+    dev.prontoParaContribuir(<span class="code-bool">true</span>);
+  }
+}</code></pre>
+            </div>
+            <div class="window-footer">
+              <span class="status-indicator"></span> Compilado com sucesso • Pronto para novos desafios
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objetivo & Resumo Profissional -->
+    <section class="section section-about" id="sobre">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-compass"></i> Visão de Futuro</span>
+          <h2 class="section-title">Objetivo & Perfil Profissional</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Card de Objetivo -->
+          <div class="card objective-card">
+            <div class="card-icon-wrapper">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h3 class="card-title">Objetivo Profissional</h3>
+            <p class="objective-text">
+              Oportunidade de <strong>estágio</strong> ou <strong>início de carreira</strong> na área de <strong>Desenvolvimento de Software / Tecnologia</strong>, aplicando conhecimentos consolidados em programação, lógica analítica, bancos de dados e inovação, com foco contínuo em aprendizado e entrega de resultados de alto impacto.
+            </p>
+            <div class="card-tags">
+              <span class="badge badge-accent">Desenvolvimento de Software</span>
+              <span class="badge badge-accent">Engenharia de Software</span>
+              <span class="badge badge-accent">Lógica & Dados</span>
+            </div>
+          </div>
+
+          <!-- Card de Resumo Profissional -->
+          <div class="card summary-card">
+            <div class="card-icon-wrapper">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <h3 class="card-title">Resumo Profissional</h3>
+            <p class="summary-text">
+              Estudante do <strong>2º ano do Ensino Médio Técnico em Desenvolvimento de Sistemas na Etec de Itaquera</strong>, com sólida base em linguagens de programação, manipulação de bancos de dados relacionais e cursos de extensão em instituições renomadas (<strong>USP, Accenture, DIO, SEBRAE, UFSCar</strong>).
+            </p>
+            <p class="summary-text">
+              Possui experiência profissional corporativa na <strong>CASSI</strong>, atuando em triagem técnica e análise de conformidade de processos. Perfil caracterizado por <strong>alta resiliência, inteligência emocional, agilidade de execução</strong> e facilidade constante para aprender novas tecnologias e integrar ecossistemas de tecnologia.
+            </p>
+            <div class="card-tags">
+              <span class="badge">Etec de Itaquera</span>
+              <span class="badge">Vivência Corporativa</span>
+              <span class="badge">Autodidata & Resiliente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiência Profissional -->
+    <section class="section section-experience" id="experiencia">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Trajetória</span>
+          <h2 class="section-title">Experiência Profissional</h2>
+          <p class="section-subtitle">Vivência corporativa com foco em processos, qualidade técnica e rigor analítico</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <div class="timeline-card card">
+              <div class="timeline-header">
+                <div>
+                  <span class="company-badge">Setor de Saúde Suplementar</span>
+                  <h3 class="timeline-role">Jovem Aprendiz — Gerência Técnica</h3>
+                  <h4 class="timeline-company">CASSI <span class="company-desc">(Caixa de Assistência dos Funcionários do Banco do Brasil)</span></h4>
+                </div>
+                <div class="timeline-date">
+                  <i class="fa-regular fa-calendar-check"></i>
+                  <span>Abril de 2026 – Presente</span>
+                </div>
+              </div>
+
+              <div class="timeline-body">
+                <p class="timeline-intro">
+                  Atuação estratégica no setor de <strong>gerência técnica corporativa</strong>, assegurando conformidade de dados, agilidade na resposta e comunicação assertiva:
+                </p>
+
+                <ul class="activity-list">
+                  <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                      <strong>Triagem Técnica Especializada:</strong> Realização de triagem metódica de senhas e solicitações encaminhadas à operadora de saúde, organizando prioridades operacionais.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                      <strong>Análise de Conformidade e Auditoria:</strong> Avaliação detalhada de conformidade documental e direcionamento ágil de demandas que exigem autorização médica prévia.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                      <strong>Otimização de Fluxos Corporativos:</strong> Contribuição contínua para precisão, organização, sigilo de dados e redução de gargalos nas rotinas da gerência.
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="skills-used">
+                  <span class="skill-pill"><i class="fa-solid fa-check"></i> Análise de Processos</span>
+                  <span class="skill-pill"><i class="fa-solid fa-check"></i> Triagem Técnica</span>
+                  <span class="skill-pill"><i class="fa-solid fa-check"></i> Conformidade & Regulação</span>
+                  <span class="skill-pill"><i class="fa-solid fa-check"></i> Organização & Precisão</span>
+                  <span class="skill-pill"><i class="fa-solid fa-check"></i> Trabalho em Equipe</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formação Acadêmica -->
+    <section class="section section-education" id="formacao">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Educação</span>
+          <h2 class="section-title">Formação Acadêmica</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="education-grid">
+          <div class="card education-card">
+            <div class="edu-top">
+              <div class="edu-icon">
+                <i class="fa-solid fa-school"></i>
+              </div>
+              <div class="edu-meta">
+                <span class="badge badge-accent">Em andamento • 2º ano</span>
+                <span class="edu-period"><i class="fa-regular fa-clock"></i> Conclusão prevista: Dezembro de 2027</span>
+              </div>
+            </div>
+
+            <h3 class="edu-degree">Ensino Médio Técnico em Desenvolvimento de Sistemas</h3>
+            <h4 class="edu-institution"><i class="fa-solid fa-landmark"></i> Etec de Itaquera — Centro Paula Souza</h4>
+
+            <p class="edu-description">
+              Formação técnica de referência estadual, voltada à capacitação aprofundada em arquitetura de software, programação estruturada e orientada a objetos, banco de dados relacionais, engenharia de requisitos e boas práticas de desenvolvimento web e mobile.
+            </p>
+
+            <div class="edu-highlights">
+              <div class="edu-highlight-item">
+                <i class="fa-solid fa-code"></i>
+                <span>Lógica e Estrutura de Dados</span>
+              </div>
+              <div class="edu-highlight-item">
+                <i class="fa-solid fa-database"></i>
+                <span>Modelagem e Consultas SQL</span>
+              </div>
+              <div class="edu-highlight-item">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span>Desenvolvimento Full Stack</span>
+              </div>
+              <div class="edu-highlight-item">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>Análise e Projeto de Sistemas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades Técnicas (Hard Skills) -->
+    <section class="section section-skills" id="habilidades">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-microchip"></i> Conhecimento Prático</span>
+          <h2 class="section-title">Habilidades Técnicas (Hard Skills)</h2>
+          <p class="section-subtitle">Competências estruturadas em desenvolvimento de código, dados e tecnologia emergente</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skills-categories-grid">
+          <!-- Categoria 1: Linguagens e Lógica -->
+          <div class="card skill-category-card">
+            <div class="category-header">
+              <div class="category-icon icon-code">
+                <i class="fa-solid fa-terminal"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Linguagens & Lógica</h3>
+                <span class="category-subtitle">Fundamentos sólidos e algoritmos</span>
+              </div>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" title="Java - Programação Orientada a Objetos e lógica">
+                <i class="fa-brands fa-java tech-icon"></i>
+                <span class="tech-name">Java</span>
+                <span class="tech-level">USP Certified</span>
+              </div>
+              <div class="tech-item" title="JavaScript - Web e manipulação DOM">
+                <i class="fa-brands fa-js tech-icon"></i>
+                <span class="tech-name">JavaScript</span>
+                <span class="tech-level">Interativo</span>
+              </div>
+              <div class="tech-item" title="Python - Automação, IA e scripts">
+                <i class="fa-brands fa-python tech-icon"></i>
+                <span class="tech-name">Python</span>
+                <span class="tech-level">Lógica & IA</span>
+              </div>
+              <div class="tech-item" title="PHP - Desenvolvimento backend e web">
+                <i class="fa-brands fa-php tech-icon"></i>
+                <span class="tech-name">PHP</span>
+                <span class="tech-level">Backend</span>
+              </div>
+              <div class="tech-item" title="C# - Orientação a objetos e .NET">
+                <i class="fa-solid fa-hashtag tech-icon"></i>
+                <span class="tech-name">C#</span>
+                <span class="tech-level">OOP</span>
+              </div>
+              <div class="tech-item" title="C & C++ - Estrutura de dados e mecatrônica">
+                <i class="fa-solid fa-c tech-icon"></i>
+                <span class="tech-name">C & C++</span>
+                <span class="tech-level">PET USP</span>
+              </div>
+              <div class="tech-item" title="Circuitos e prototipagem no Tinkercad">
+                <i class="fa-solid fa-microchip tech-icon"></i>
+                <span class="tech-name">Tinkercad</span>
+                <span class="tech-level">Circuitos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 2: Bancos de Dados -->
+          <div class="card skill-category-card">
+            <div class="category-header">
+              <div class="category-icon icon-db">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Bancos de Dados</h3>
+                <span class="category-subtitle">Modelagem, integridade e consultas</span>
+              </div>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" title="MySQL - Consultas, DDL, DML, Relacionamentos">
+                <i class="fa-solid fa-database tech-icon"></i>
+                <span class="tech-name">MySQL</span>
+                <span class="tech-level">Relacional</span>
+              </div>
+              <div class="tech-item" title="Microsoft SQL Server - Administração e T-SQL">
+                <i class="fa-solid fa-server tech-icon"></i>
+                <span class="tech-name">SQL Server</span>
+                <span class="tech-level">Corporativo</span>
+              </div>
+              <div class="tech-item" title="Lógica de Banco de Dados, Normalização e Queries">
+                <i class="fa-solid fa-table-cells tech-icon"></i>
+                <span class="tech-name">Modelagem SQL</span>
+                <span class="tech-level">Diagramação</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 3: Desenvolvimento Web -->
+          <div class="card skill-category-card">
+            <div class="category-header">
+              <div class="category-icon icon-web">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Desenvolvimento Web</h3>
+                <span class="category-subtitle">Estruturação e estilização moderna</span>
+              </div>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" title="HTML5 Semântico, Acessibilidade e SEO">
+                <i class="fa-brands fa-html5 tech-icon"></i>
+                <span class="tech-name">HTML5</span>
+                <span class="tech-level">Semântico</span>
+              </div>
+              <div class="tech-item" title="CSS3 Moderno, Flexbox, CSS Grid, Animações">
+                <i class="fa-brands fa-css3-alt tech-icon"></i>
+                <span class="tech-name">CSS3</span>
+                <span class="tech-level">Responsivo</span>
+              </div>
+              <div class="tech-item" title="Design Adaptativo para Dispositivos Móveis">
+                <i class="fa-solid fa-mobile-screen-button tech-icon"></i>
+                <span class="tech-name">Mobile First</span>
+                <span class="tech-level">Layouts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 4: Áreas de Interesse e Inovação -->
+          <div class="card skill-category-card">
+            <div class="category-header">
+              <div class="category-icon icon-ai">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Áreas de Interesse & Inovação</h3>
+                <span class="category-subtitle">Tecnologias de fronteira</span>
+              </div>
+            </div>
+            <div class="tech-grid">
+              <div class="tech-item" title="Inteligência Artificial aplicada">
+                <i class="fa-solid fa-robot tech-icon"></i>
+                <span class="tech-name">Inteligência Artificial</span>
+                <span class="tech-level">Fundamentos</span>
+              </div>
+              <div class="tech-item" title="Machine Learning e modelos preditivos">
+                <i class="fa-solid fa-chart-line tech-icon"></i>
+                <span class="tech-name">Machine Learning</span>
+                <span class="tech-level">Hype Data</span>
+              </div>
+              <div class="tech-item" title="Cloud Computing e serviços em nuvem">
+                <i class="fa-solid fa-cloud tech-icon"></i>
+                <span class="tech-name">Cloud Computing</span>
+                <span class="tech-level">Accenture</span>
+              </div>
+              <div class="tech-item" title="Engenharia de Prompts e IA Generativa">
+                <i class="fa-solid fa-wand-magic-sparkles tech-icon"></i>
+                <span class="tech-name">Eng. de Prompts</span>
+                <span class="tech-level">DIO Certified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cursos e Certificações -->
+    <section class="section section-certifications" id="certificados">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-certificate"></i> Educação Continuada</span>
+          <h2 class="section-title">Cursos & Certificações</h2>
+          <p class="section-subtitle">Extensões acadêmicas e profissionais em instituições de excelência</p>
+          <div class="section-line"></div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">Todos (11)</button>
+          <button class="filter-btn" data-filter="prog">Programação & Cloud (4)</button>
+          <button class="filter-btn" data-filter="ai">IA & Inovação (3)</button>
+          <button class="filter-btn" data-filter="web">Web & Processos (3)</button>
+          <button class="filter-btn" data-filter="lang">Idiomas (1)</button>
+        </div>
+
+        <!-- Certifications Grid -->
+        <div class="cert-grid" id="cert-container">
+
+          <!-- 1. Java Básico -->
+          <div class="card cert-card" data-category="prog">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 20 Horas</span>
+              <span class="cert-institution usp">USP</span>
+            </div>
+            <h3 class="cert-title">Java Básico</h3>
+            <p class="cert-entity"><i class="fa-solid fa-building-columns"></i> Projeto COMPETEC / EACH USP</p>
+            <p class="cert-desc">Estrutura fundamental da linguagem Java, tipos de dados primitivos, estruturas condicionais e de repetição, lógica algorítmica.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-solid fa-code"></i> Java</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+          <!-- 2. Java Orientado a Objetos -->
+          <div class="card cert-card" data-category="prog">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 8 Horas</span>
+              <span class="cert-institution usp">USP</span>
+            </div>
+            <h3 class="cert-title">Java Orientado a Objetos</h3>
+            <p class="cert-entity"><i class="fa-solid fa-building-columns"></i> Projeto COMPETEC / EACH USP</p>
+            <p class="cert-desc">Conceitos centrais de POO: Classes, Objetos, Encapsulamento, Herança, Polimorfismo e interfaces aplicadas.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-solid fa-cubes"></i> POO / OOP</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+          <!-- 3. Java e Cloud -->
+          <div class="card cert-card" data-category="prog">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 1 Hora</span>
+              <span class="cert-institution accenture">Accenture</span>
+            </div>
+            <h3 class="cert-title">Java e Cloud</h3>
+            <p class="cert-entity"><i class="fa-solid fa-network-wired"></i> Accenture Brasil</p>
+            <p class="cert-desc">Integração do ecossistema corporativo Java com arquiteturas em nuvem, microsserviços e escalabilidade moderna.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-solid fa-cloud"></i> Cloud Computing</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+          <!-- 4. Tinkercad e C++ -->
+          <div class="card cert-card" data-category="prog">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 10 Horas</span>
+              <span class="cert-institution usp">USP</span>
+            </div>
+            <h3 class="cert-title">Montagem de Circuitos no Tinkercad e Programação em C++</h3>
+            <p class="cert-entity"><i class="fa-solid fa-building-columns"></i> Projeto Conhecendo a Mecatrônica / PET USP</p>
+            <p class="cert-desc">Desenvolvimento e simulação de circuitos eletrônicos, lógica de controle de hardware e programação orientada a dispositivos em C++.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-solid fa-microchip"></i> C++ & Hardware</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+          <!-- 5. Introdução a Machine Learning -->
+          <div class="card cert-card" data-category="ai">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 1,5 Horas</span>
+              <span class="cert-institution hype">Hype Data & AI</span>
+            </div>
+            <h3 class="cert-title">Introdução a Machine Learning</h3>
+            <p class="cert-entity"><i class="fa-solid fa-brain"></i> Hype Data & AI</p>
+            <p class="cert-desc">Visão panorâmica sobre aprendizado supervisionado, não supervisionado, tratamento inicial de datasets e métricas analíticas.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-solid fa-chart-pie"></i> Machine Learning</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+          <!-- 6. Introdução à Inteligência Artificial -->
+          <div class="card cert-card" data-category="ai">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 1 Hora</span>
+              <span class="cert-institution dio">DIO</span>
+            </div>
+            <h3 class="cert-title">Introdução à Inteligência Artificial</h3>
+            <p class="cert-entity"><i class="fa-solid fa-laptop-code"></i> Digital Innovation One (DIO)</p>
+            <p class="cert-desc">Conceitos fundamentais da evolução da IA, redes neurais, aplicações industriais e cenários contemporâneos de tecnologia.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-solid fa-robot"></i> Inteligência Artificial</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+          <!-- 7. Engenharia de Prompts -->
+          <div class="card cert-card" data-category="ai">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 1 Hora</span>
+              <span class="cert-institution dio">DIO</span>
+            </div>
+            <h3 class="cert-title">Engenharia de Prompts</h3>
+            <p class="cert-entity"><i class="fa-solid fa-laptop-code"></i> Digital Innovation One (DIO)</p>
+            <p class="cert-desc">Técnicas de refinamento de instruções, zero-shot/few-shot prompting, estruturação de contexto e potencialização de LLMs.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Prompt Engineering</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+          <!-- 8. Ferramentas LEAN -->
+          <div class="card cert-card" data-category="web">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 3 Horas</span>
+              <span class="cert-institution sebrae">SEBRAE</span>
+            </div>
+            <h3 class="cert-title">Ferramentas LEAN</h3>
+            <p class="cert-entity"><i class="fa-solid fa-gears"></i> SEBRAE</p>
+            <p class="cert-desc">Filosofia de melhoria contínua (Kaizen), identificação de desperdícios, padronização de processos e eficiência operacional.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-solid fa-arrow-trend-up"></i> Eficiência LEAN</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+          <!-- 9. HTML5 -->
+          <div class="card cert-card" data-category="web">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 1 Hora</span>
+              <span class="cert-institution renapsi">Renapsi</span>
+            </div>
+            <h3 class="cert-title">HTML5</h3>
+            <p class="cert-entity"><i class="fa-solid fa-graduation-cap"></i> Renapsi</p>
+            <p class="cert-desc">Estruturação semântica de páginas web, tags de acessibilidade, formulários interativos e arquitetura de conteúdo para navegadores.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-brands fa-html5"></i> Web Front-End</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+          <!-- 10. CSS -->
+          <div class="card cert-card" data-category="web">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 1 Hora</span>
+              <span class="cert-institution renapsi">Renapsi</span>
+            </div>
+            <h3 class="cert-title">CSS</h3>
+            <p class="cert-entity"><i class="fa-solid fa-graduation-cap"></i> Renapsi</p>
+            <p class="cert-desc">Estilização de elementos, manipulação de cores, tipografia, modelo de caixa (box model) e layout responsivo.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-brands fa-css3-alt"></i> Estilização Web</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+          <!-- 11. Japonês Básico 5 -->
+          <div class="card cert-card" data-category="lang">
+            <div class="cert-top">
+              <span class="cert-badge-hours"><i class="fa-regular fa-clock"></i> 10 Horas</span>
+              <span class="cert-institution ufscar">UFSCar</span>
+            </div>
+            <h3 class="cert-title">Curso Básico de Japonês 5</h3>
+            <p class="cert-entity"><i class="fa-solid fa-building-columns"></i> Universidade Federal de São Carlos (UFSCar)</p>
+            <p class="cert-desc">Estudos de estrutura linguística, escrita, vocabulário e imersão cultural no idioma japonês, demonstrando versatilidade cognitiva.</p>
+            <div class="cert-footer">
+              <span class="cert-tag"><i class="fa-solid fa-language"></i> Idioma Japonês</span>
+              <span class="cert-tag"><i class="fa-solid fa-check"></i> Concluído</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Competências Comportamentais (Soft Skills) -->
+    <section class="section section-soft-skills" id="diferenciais">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-heart-pulse"></i> Diferenciais</span>
+          <h2 class="section-title">Competências Comportamentais (Soft Skills)</h2>
+          <p class="section-subtitle">Atributos humanos e profissionais testados no ambiente corporativo e acadêmico</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="soft-skills-grid">
+          <!-- Soft Skill 1 -->
+          <div class="card soft-card">
+            <div class="soft-icon-box icon-shield">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="soft-title">Alta Resiliência & Inteligência Emocional</h3>
+            <p class="soft-desc">
+              Capacidade comprovada em ambiente corporativo exigente (CASSI), mantendo o equilíbrio, a compostura e o foco na resolução sob fluxos contínuos de triagem e prazos rigorosos.
+            </p>
+            <ul class="soft-points">
+              <li><i class="fa-solid fa-angle-right"></i> Maturidade e postura profissional ética</li>
+              <li><i class="fa-solid fa-angle-right"></i> Adaptabilidade rápida a mudanças de cenário</li>
+              <li><i class="fa-solid fa-angle-right"></i> Gestão do estresse com foco na entrega</li>
+            </ul>
+          </div>
+
+          <!-- Soft Skill 2 -->
+          <div class="card soft-card">
+            <div class="soft-icon-box icon-rocket">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3 class="soft-title">Facilidade & Vontade Constante de Aprender</h3>
+            <p class="soft-desc">
+              Curiosidade intelectual e disciplina autodidata demonstradas pela conquista de mais de 10 certificações em instituições como USP, Accenture e DIO antes mesmo de concluir o ensino técnico.
+            </p>
+            <ul class="soft-points">
+              <li><i class="fa-solid fa-angle-right"></i> Rápida curva de aprendizado em novas linguagens</li>
+              <li><i class="fa-solid fa-angle-right"></i> Proatividade para pesquisar e resolver problemas</li>
+              <li><i class="fa-solid fa-angle-right"></i> Abertura total a feedbacks construtivos</li>
+            </ul>
+          </div>
+
+          <!-- Soft Skill 3 -->
+          <div class="card soft-card">
+            <div class="soft-icon-box icon-gear">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h3 class="soft-title">Organização, Lógica & Atenção aos Detalhes</h3>
+            <p class="soft-desc">
+              Rigor analítico na conferência de dados, prevenção de erros e estruturação de rotinas, unindo o pensamento lógico da programação à precisão dos fluxos de auditoria corporativa.
+            </p>
+            <ul class="soft-points">
+              <li><i class="fa-solid fa-angle-right"></i> Análise minuciosa de requisitos e conformidades</li>
+              <li><i class="fa-solid fa-angle-right"></i> Organização estruturada de informações e códigos</li>
+              <li><i class="fa-solid fa-angle-right"></i> Raciocínio lógico focado em eficiência LEAN</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section section-contact" id="contato">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Conexão</span>
+          <h2 class="section-title">Entre em Contato</h2>
+          <p class="section-subtitle">Estou pronto para agregar valor ao seu time. Vamos conversar!</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-wrapper">
+          <!-- Coluna com Cards de Contato Direto -->
+          <div class="contact-cards">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/5511994723395?text=Ol%C3%A1%20Matheus!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade." target="_blank" rel="noopener noreferrer" class="card contact-item-card">
+              <div class="contact-item-icon whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div class="contact-item-info">
+                <span class="contact-label">WhatsApp Direto</span>
+                <span class="contact-val">+55 (11) 99472-3395</span>
+                <span class="contact-hint">Clique para iniciar uma conversa</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-external-icon"></i>
+            </a>
+
+            <!-- E-mail -->
+            <div class="card contact-item-card" id="copy-email-card" style="cursor: pointer;" title="Clique para copiar o e-mail">
+              <div class="contact-item-icon email">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-item-info">
+                <span class="contact-label">E-mail Profissional</span>
+                <span class="contact-val">matheusmgamg@gmail.com</span>
+                <span class="contact-hint">Clique para copiar ou enviar</span>
+              </div>
+              <button class="btn-copy-small" aria-label="Copiar e-mail">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/matheus-giovanni-azevedo-magalh%C3%A3es-445437388?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="card contact-item-card">
+              <div class="contact-item-icon linkedin">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              <div class="contact-item-info">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-val">Matheus Giovanni Azevedo Magalhães</span>
+                <span class="contact-hint">Conectar na rede profissional</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-external-icon"></i>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Matheus298000" target="_blank" rel="noopener noreferrer" class="card contact-item-card">
+              <div class="contact-item-icon github">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="contact-item-info">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-val">github.com/Matheus298000</span>
+                <span class="contact-hint">Ver códigos e projetos</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-external-icon"></i>
+            </a>
+
+            <!-- Localização -->
+            <div class="card contact-item-card static">
+              <div class="contact-item-icon location">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-item-info">
+                <span class="contact-label">Localização</span>
+                <span class="contact-val">São Paulo - SP, Brasil</span>
+                <span class="contact-hint">Disponibilidade para posições presenciais, híbridas ou remotas</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna com Gerador de Mensagem Rápida -->
+          <div class="card quick-message-card">
+            <div class="quick-msg-header">
+              <i class="fa-solid fa-bolt"></i>
+              <div>
+                <h3 class="quick-msg-title">Envio Rápido de Mensagem</h3>
+                <p class="quick-msg-sub">Gere uma mensagem personalizada para me enviar no WhatsApp ou E-mail instantaneamente:</p>
+              </div>
+            </div>
+
+            <form id="quick-msg-form" onsubmit="return false;">
+              <div class="form-group">
+                <label for="sender-name">Seu Nome ou da Empresa:</label>
+                <input type="text" id="sender-name" class="form-control" placeholder="Ex: Roberto - Empresa Tech" required>
+              </div>
+
+              <div class="form-group">
+                <label for="sender-topic">Assunto / Interesse:</label>
+                <select id="sender-topic" class="form-control">
+                  <option value="Estágio em Desenvolvimento de Software">Oportunidade de Estágio em Desenvolvimento</option>
+                  <option value="Início de Carreira / Jovem Aprendiz Tech">Início de Carreira / Tecnologia</option>
+                  <option value="Entrevista e Conversa Geral">Convite para Entrevista / Bate-papo</option>
+                  <option value="Outro Assunto">Outro Assunto</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sender-message">Mensagem:</label>
+                <textarea id="sender-message" class="form-control" rows="4" placeholder="Olá Matheus, gostamos do seu currículo e perfil técnico..."></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" id="send-whatsapp-btn" class="btn btn-primary btn-full">
+                  <i class="fa-brands fa-whatsapp"></i> Enviar Mensagem via WhatsApp
+                </button>
+                <button type="button" id="send-email-btn" class="btn btn-secondary btn-full">
+                  <i class="fa-solid fa-envelope"></i> Enviar via E-mail
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#hero" class="logo">
+          <span class="logo-symbol">&lt;</span>
+          <span class="logo-text">Matheus<span class="accent-text">.dev</span></span>
+          <span class="logo-symbol">/&gt;</span>
+        </a>
+        <p class="footer-copy">
+          Desenvolvido com dedicação, HTML5 semântico, CSS3 e JavaScript. <br>
+          Currículo e Portfólio de <strong>Matheus Giovanni Azevedo Magalhães</strong> &bull; São Paulo - SP
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/Matheus298000" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/matheus-giovanni-azevedo-magalh%C3%A3es-445437388?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://wa.me/5511994723395" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="mailto:matheusmgamg@gmail.com" title="E-mail">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toast-message">Copiado com sucesso!</span>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
