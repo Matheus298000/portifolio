@@ -6,6 +6,7 @@
 import { initReveal } from './reveal.js';
 import { initNav } from './nav.js';
 import { initMagnetic } from './magnetic.js';
+import { initCertificacoes } from './certificacoes.js';
 
 // 1. Smooth Scroll de Alta Precisão (Lenis via CDN, com fallback e respeito a reduced-motion)
 function initSmoothScroll() {
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initCustomCursor();
   initNav();
+  initCertificacoes();
   initReveal();
   initMagnetic();
 });

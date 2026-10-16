@@ -701,119 +701,164 @@
         </p>
       </div>
 
-      <!-- Lista Tipográfica Editorial -->
-      <div data-reveal data-reveal-delay="100" class="border-t border-border divide-y divide-border">
+      <!-- Lista Editorial Numerada (Renderizada via assets/js/certificacoes.js com fallback estático) -->
+      <div id="certificacoes-list" class="border-t border-border/80 divide-y divide-border/60">
         
-        <!-- Item: USP Programação -->
-        <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 group hover:bg-surface/30 px-4 -mx-4 rounded-xl transition-colors">
-          <div>
-            <span class="text-xs font-mono uppercase text-accent block mb-1">USP • Universidade de São Paulo</span>
-            <h3 class="text-lg sm:text-xl font-display font-semibold text-primary group-hover:text-white transition-colors">
-              Java Básico (20h) & Java Orientado a Objetos (8h)
-            </h3>
-            <p class="text-xs sm:text-sm text-muted mt-1 font-mono">Projeto COMPETEC / EACH USP</p>
+        <!-- Fallback Semântico e Acessível (caso o JS esteja desativado ou antes da hidratação) -->
+        <!-- Item 01: USP -->
+        <div data-reveal data-reveal-delay="100" class="group relative block py-6 sm:py-8 px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-2xl border-b border-border/70 transition-all duration-300 hover:bg-surface/40 hover:backdrop-blur-sm">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-start md:items-center">
+            <div class="md:col-span-1 flex items-center">
+              <span class="font-mono text-xs sm:text-sm text-faint group-hover:text-accent transition-colors duration-300">01</span>
+            </div>
+            <div class="md:col-span-4 lg:col-span-4">
+              <h3 class="font-display text-2xl sm:text-3xl font-bold text-primary group-hover:text-accent transition-colors duration-300 tracking-tight">USP</h3>
+            </div>
+            <div class="md:col-span-7 lg:col-span-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6">
+              <div class="flex flex-col">
+                <!-- TODO: nome do curso -->
+                <span class="text-sm sm:text-base font-medium text-muted/60 italic">[Curso a definir]</span>
+                <div class="flex items-center gap-2 mt-1 text-xs font-mono text-muted">
+                  <!-- TODO: carga horária -->
+                  <span>Carga horária a definir</span>
+                  <span class="text-faint">•</span>
+                  <!-- TODO: ano -->
+                  <span>Ano</span>
+                </div>
+              </div>
+              <!-- TODO: link do certificado (opcional) -->
+            </div>
           </div>
-          <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-surface border border-border text-muted self-start md:self-auto">
-            28h Totais
-          </span>
         </div>
 
-        <!-- Item: USP Mecatrônica -->
-        <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 group hover:bg-surface/30 px-4 -mx-4 rounded-xl transition-colors">
-          <div>
-            <span class="text-xs font-mono uppercase text-accent block mb-1">USP • PET Mecatrônica</span>
-            <h3 class="text-lg sm:text-xl font-display font-semibold text-primary group-hover:text-white transition-colors">
-              Montagem de Circuitos no Tinkercad e Programação em C++ (10h)
-            </h3>
-            <p class="text-xs sm:text-sm text-muted mt-1 font-mono">Projeto Conhecendo a Mecatrônica</p>
+        <!-- Item 02: Accenture -->
+        <div data-reveal data-reveal-delay="160" class="group relative block py-6 sm:py-8 px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-2xl border-b border-border/70 transition-all duration-300 hover:bg-surface/40 hover:backdrop-blur-sm">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-start md:items-center">
+            <div class="md:col-span-1 flex items-center">
+              <span class="font-mono text-xs sm:text-sm text-faint group-hover:text-accent transition-colors duration-300">02</span>
+            </div>
+            <div class="md:col-span-4 lg:col-span-4">
+              <h3 class="font-display text-2xl sm:text-3xl font-bold text-primary group-hover:text-accent transition-colors duration-300 tracking-tight">Accenture</h3>
+            </div>
+            <div class="md:col-span-7 lg:col-span-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6">
+              <div class="flex flex-col">
+                <!-- TODO: nome do curso -->
+                <span class="text-sm sm:text-base font-medium text-muted/60 italic">[Curso a definir]</span>
+                <div class="flex items-center gap-2 mt-1 text-xs font-mono text-muted">
+                  <!-- TODO: carga horária -->
+                  <span>Carga horária a definir</span>
+                  <span class="text-faint">•</span>
+                  <!-- TODO: ano -->
+                  <span>Ano</span>
+                </div>
+              </div>
+              <!-- TODO: link do certificado (opcional) -->
+            </div>
           </div>
-          <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-surface border border-border text-muted self-start md:self-auto">
-            10 Horas
-          </span>
         </div>
 
-        <!-- Item: Accenture -->
-        <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 group hover:bg-surface/30 px-4 -mx-4 rounded-xl transition-colors">
-          <div>
-            <span class="text-xs font-mono uppercase text-accent block mb-1">Accenture</span>
-            <h3 class="text-lg sm:text-xl font-display font-semibold text-primary group-hover:text-white transition-colors">
-              Java e Cloud (1h)
-            </h3>
-            <p class="text-xs sm:text-sm text-muted mt-1 font-mono">Visão corporativa de computação em nuvem</p>
+        <!-- Item 03: DIO -->
+        <div data-reveal data-reveal-delay="220" class="group relative block py-6 sm:py-8 px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-2xl border-b border-border/70 transition-all duration-300 hover:bg-surface/40 hover:backdrop-blur-sm">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-start md:items-center">
+            <div class="md:col-span-1 flex items-center">
+              <span class="font-mono text-xs sm:text-sm text-faint group-hover:text-accent transition-colors duration-300">03</span>
+            </div>
+            <div class="md:col-span-4 lg:col-span-4">
+              <h3 class="font-display text-2xl sm:text-3xl font-bold text-primary group-hover:text-accent transition-colors duration-300 tracking-tight">DIO</h3>
+            </div>
+            <div class="md:col-span-7 lg:col-span-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6">
+              <div class="flex flex-col">
+                <!-- TODO: nome do curso -->
+                <span class="text-sm sm:text-base font-medium text-muted/60 italic">[Curso a definir]</span>
+                <div class="flex items-center gap-2 mt-1 text-xs font-mono text-muted">
+                  <!-- TODO: carga horária -->
+                  <span>Carga horária a definir</span>
+                  <span class="text-faint">•</span>
+                  <!-- TODO: ano -->
+                  <span>Ano</span>
+                </div>
+              </div>
+              <!-- TODO: link do certificado (opcional) -->
+            </div>
           </div>
-          <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-surface border border-border text-muted self-start md:self-auto">
-            1 Hora
-          </span>
         </div>
 
-        <!-- Item: Hype Data & AI -->
-        <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 group hover:bg-surface/30 px-4 -mx-4 rounded-xl transition-colors">
-          <div>
-            <span class="text-xs font-mono uppercase text-accent block mb-1">Hype Data & AI</span>
-            <h3 class="text-lg sm:text-xl font-display font-semibold text-primary group-hover:text-white transition-colors">
-              Introdução a Machine Learning (1,5h)
-            </h3>
-            <p class="text-xs sm:text-sm text-muted mt-1 font-mono">Fundamentos de modelos analíticos e dados</p>
+        <!-- Item 04: SEBRAE -->
+        <div data-reveal data-reveal-delay="280" class="group relative block py-6 sm:py-8 px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-2xl border-b border-border/70 transition-all duration-300 hover:bg-surface/40 hover:backdrop-blur-sm">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-start md:items-center">
+            <div class="md:col-span-1 flex items-center">
+              <span class="font-mono text-xs sm:text-sm text-faint group-hover:text-accent transition-colors duration-300">04</span>
+            </div>
+            <div class="md:col-span-4 lg:col-span-4">
+              <h3 class="font-display text-2xl sm:text-3xl font-bold text-primary group-hover:text-accent transition-colors duration-300 tracking-tight">SEBRAE</h3>
+            </div>
+            <div class="md:col-span-7 lg:col-span-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6">
+              <div class="flex flex-col">
+                <!-- TODO: nome do curso -->
+                <span class="text-sm sm:text-base font-medium text-muted/60 italic">[Curso a definir]</span>
+                <div class="flex items-center gap-2 mt-1 text-xs font-mono text-muted">
+                  <!-- TODO: carga horária -->
+                  <span>Carga horária a definir</span>
+                  <span class="text-faint">•</span>
+                  <!-- TODO: ano -->
+                  <span>Ano</span>
+                </div>
+              </div>
+              <!-- TODO: link do certificado (opcional) -->
+            </div>
           </div>
-          <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-surface border border-border text-muted self-start md:self-auto">
-            1,5 Horas
-          </span>
         </div>
 
-        <!-- Item: DIO -->
-        <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 group hover:bg-surface/30 px-4 -mx-4 rounded-xl transition-colors">
-          <div>
-            <span class="text-xs font-mono uppercase text-accent block mb-1">DIO • Digital Innovation One</span>
-            <h3 class="text-lg sm:text-xl font-display font-semibold text-primary group-hover:text-white transition-colors">
-              Introdução à Inteligência Artificial (1h) & Engenharia de Prompts (1h)
-            </h3>
-            <p class="text-xs sm:text-sm text-muted mt-1 font-mono">Modelos generativos e técnicas de contexto</p>
+        <!-- Item 05: UFSCar -->
+        <div data-reveal data-reveal-delay="340" class="group relative block py-6 sm:py-8 px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-2xl border-b border-border/70 transition-all duration-300 hover:bg-surface/40 hover:backdrop-blur-sm">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-start md:items-center">
+            <div class="md:col-span-1 flex items-center">
+              <span class="font-mono text-xs sm:text-sm text-faint group-hover:text-accent transition-colors duration-300">05</span>
+            </div>
+            <div class="md:col-span-4 lg:col-span-4">
+              <h3 class="font-display text-2xl sm:text-3xl font-bold text-primary group-hover:text-accent transition-colors duration-300 tracking-tight">UFSCar</h3>
+            </div>
+            <div class="md:col-span-7 lg:col-span-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6">
+              <div class="flex flex-col">
+                <!-- TODO: nome do curso -->
+                <span class="text-sm sm:text-base font-medium text-muted/60 italic">[Curso a definir]</span>
+                <div class="flex items-center gap-2 mt-1 text-xs font-mono text-muted">
+                  <!-- TODO: carga horária -->
+                  <span>Carga horária a definir</span>
+                  <span class="text-faint">•</span>
+                  <!-- TODO: ano -->
+                  <span>Ano</span>
+                </div>
+              </div>
+              <!-- TODO: link do certificado (opcional) -->
+            </div>
           </div>
-          <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-surface border border-border text-muted self-start md:self-auto">
-            2h Totais
-          </span>
         </div>
 
-        <!-- Item: SEBRAE -->
-        <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 group hover:bg-surface/30 px-4 -mx-4 rounded-xl transition-colors">
-          <div>
-            <span class="text-xs font-mono uppercase text-accent block mb-1">SEBRAE</span>
-            <h3 class="text-lg sm:text-xl font-display font-semibold text-primary group-hover:text-white transition-colors">
-              Ferramentas LEAN (3h)
-            </h3>
-            <p class="text-xs sm:text-sm text-muted mt-1 font-mono">Otimização contínua de processos e eliminação de desperdícios</p>
+        <!-- Item 06: Renapsi -->
+        <div data-reveal data-reveal-delay="400" class="group relative block py-6 sm:py-8 px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-2xl border-b border-border/70 transition-all duration-300 hover:bg-surface/40 hover:backdrop-blur-sm">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-start md:items-center">
+            <div class="md:col-span-1 flex items-center">
+              <span class="font-mono text-xs sm:text-sm text-faint group-hover:text-accent transition-colors duration-300">06</span>
+            </div>
+            <div class="md:col-span-4 lg:col-span-4">
+              <h3 class="font-display text-2xl sm:text-3xl font-bold text-primary group-hover:text-accent transition-colors duration-300 tracking-tight">Renapsi</h3>
+            </div>
+            <div class="md:col-span-7 lg:col-span-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6">
+              <div class="flex flex-col">
+                <!-- TODO: nome do curso -->
+                <span class="text-sm sm:text-base font-medium text-muted/60 italic">[Curso a definir]</span>
+                <div class="flex items-center gap-2 mt-1 text-xs font-mono text-muted">
+                  <!-- TODO: carga horária -->
+                  <span>Carga horária a definir</span>
+                  <span class="text-faint">•</span>
+                  <!-- TODO: ano -->
+                  <span>Ano</span>
+                </div>
+              </div>
+              <!-- TODO: link do certificado (opcional) -->
+            </div>
           </div>
-          <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-surface border border-border text-muted self-start md:self-auto">
-            3 Horas
-          </span>
-        </div>
-
-        <!-- Item: Renapsi -->
-        <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 group hover:bg-surface/30 px-4 -mx-4 rounded-xl transition-colors">
-          <div>
-            <span class="text-xs font-mono uppercase text-accent block mb-1">Renapsi</span>
-            <h3 class="text-lg sm:text-xl font-display font-semibold text-primary group-hover:text-white transition-colors">
-              HTML5 (1h) & CSS (1h)
-            </h3>
-            <p class="text-xs sm:text-sm text-muted mt-1 font-mono">Estruturação e estilização para web</p>
-          </div>
-          <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-surface border border-border text-muted self-start md:self-auto">
-            2h Totais
-          </span>
-        </div>
-
-        <!-- Item: UFSCar -->
-        <div class="py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 group hover:bg-surface/30 px-4 -mx-4 rounded-xl transition-colors">
-          <div>
-            <span class="text-xs font-mono uppercase text-accent block mb-1">UFSCar • Univ. Federal de São Carlos</span>
-            <h3 class="text-lg sm:text-xl font-display font-semibold text-primary group-hover:text-white transition-colors">
-              Curso Básico de Japonês 5 (10h)
-            </h3>
-            <p class="text-xs sm:text-sm text-muted mt-1 font-mono">Estrutura linguística e comunicação básica</p>
-          </div>
-          <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-surface border border-border text-muted self-start md:self-auto">
-            10 Horas
-          </span>
         </div>
 
       </div>
