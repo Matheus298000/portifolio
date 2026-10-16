@@ -7,6 +7,7 @@ import { initReveal } from './reveal.js';
 import { initNav } from './nav.js';
 import { initMagnetic } from './magnetic.js';
 import { initCertificacoes } from './certificacoes.js';
+import { initContact } from './contact.js';
 
 // 1. Smooth Scroll de Alta Precisão (Lenis via CDN, com fallback e respeito a reduced-motion)
 function initSmoothScroll() {
@@ -20,6 +21,7 @@ function initSmoothScroll() {
       smoothWheel: true,
       touchMultiplier: 1.5,
     });
+    window.LenisInstance = lenis;
 
     function raf(time) {
       lenis.raf(time);
@@ -77,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCustomCursor();
   initNav();
   initCertificacoes();
+  initContact();
   initReveal();
   initMagnetic();
 });

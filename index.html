@@ -867,69 +867,133 @@
     <!-- ========================================================================
          05. SEÇÃO CONTATO (#contato)
          ======================================================================== -->
-    <section id="contato" class="py-24 sm:py-32 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto border-t border-border">
+    <section id="contato" class="py-24 sm:py-32 lg:py-40 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto border-t border-border">
       
+      <!-- Topo: Tag de Identificação -->
+      <div data-reveal class="mb-12 sm:mb-16">
+        <span class="text-xs uppercase font-mono tracking-widest text-accent block">05 / Contato</span>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
-        <!-- Chamada de Alto Impacto -->
-        <div data-reveal class="lg:col-span-7">
-          <span class="text-xs uppercase font-mono tracking-widest text-accent block mb-3">05 / Contato</span>
-          <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-primary leading-tight mb-6">
-            Pronto para agregar valor técnico à sua equipe.
-          </h2>
-          <p class="text-base sm:text-lg text-muted max-w-xl leading-relaxed mb-8">
-            Estou em busca de oportunidades de estágio em desenvolvimento de software e tecnologia. Se a sua empresa valoriza dedicação diária, capacidade de aprendizado e compromisso com entregas bem estruturadas, vamos conversar.
-          </p>
+        <!-- Coluna Esquerda: Título Gigante, Proposta e E-mail Protagonista -->
+        <div data-reveal data-reveal-delay="100" class="lg:col-span-7 flex flex-col justify-between">
+          <div>
+            <h2 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-primary leading-[0.94] text-balance mb-6 sm:mb-8">
+              Vamos <br />
+              <span class="text-zinc-500 hover:text-zinc-300 transition-colors duration-500">conversar?</span>
+            </h2>
 
-          <div class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-surface border border-border text-xs font-mono text-muted">
-            <span class="w-2 h-2 rounded-full bg-accent"></span>
-            <span>São Paulo — SP (Disponível para modelo presencial, híbrido ou remoto)</span>
+            <p class="text-base sm:text-lg text-muted font-normal leading-relaxed text-balance max-w-xl mb-10 sm:mb-12">
+              Estou em busca de oportunidades de estágio ou início de carreira em desenvolvimento de software e tecnologia. Se a sua equipe valoriza dedicação diária, facilidade de aprendizado e compromisso técnico com entregas sólidas, a porta está aberta.
+            </p>
+          </div>
+
+          <!-- Bloco do E-mail em Destaque com Sublinhado Animado e Botão de Copiar -->
+          <div class="space-y-3 pt-6 border-t border-border/80">
+            <span class="text-xs font-mono uppercase tracking-widest text-muted block">
+              E-mail profissional
+            </span>
+
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 flex-wrap">
+              <a
+                href="mailto:matheusmgamg@gmail.com"
+                class="group relative inline-block font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-primary hover:text-accent transition-colors duration-300 break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+              >
+                <span>matheusmgamg@gmail.com</span>
+                <!-- Sublinhado Animado no Hover -->
+                <span class="absolute bottom-0 left-0 w-full h-[2px] bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" aria-hidden="true"></span>
+              </a>
+
+              <!-- Botão Copiar E-mail com Feedback Tátil -->
+              <button
+                type="button"
+                id="copy-email-btn"
+                data-email="matheusmgamg@gmail.com"
+                data-magnetic
+                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-border hover:border-accent/50 bg-surface/70 hover:bg-surface text-xs font-mono text-muted hover:text-primary transition-all duration-300 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent shrink-0 cursor-pointer"
+                aria-label="Copiar endereço de e-mail matheusmgamg@gmail.com"
+              >
+                <svg id="copy-email-icon" class="w-3.5 h-3.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                <span id="copy-email-text">Copiar e-mail</span>
+              </button>
+            </div>
+
+            <!-- Região de Status com aria-live para Leitores de Tela -->
+            <span id="copy-email-status" class="sr-only" aria-live="polite"></span>
           </div>
         </div>
 
-        <!-- Ações Diretas Táteis -->
-        <div data-reveal data-reveal-delay="200" class="lg:col-span-5 flex flex-col gap-4">
+        <!-- Coluna Direita: CTA Primário WhatsApp & Links Secundários Editoriais -->
+        <div data-reveal data-reveal-delay="200" class="lg:col-span-5 flex flex-col justify-between gap-8 sm:gap-10">
           
-          <!-- E-mail Principal -->
-          <a href="mailto:matheusmgamg@gmail.com" data-magnetic class="group p-6 rounded-2xl bg-surface border border-border hover:border-accent transition-all duration-300 block">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-muted uppercase tracking-wider">E-mail Profissional</span>
-              <span class="text-xs font-mono text-accent group-hover:translate-x-1 transition-transform">Enviar mensagem →</span>
-            </div>
-            <span class="font-mono text-base sm:text-lg text-primary font-medium group-hover:text-white transition-colors">
-              matheusmgamg@gmail.com
+          <!-- CTA Primário WhatsApp -->
+          <div class="space-y-3">
+            <span class="text-xs font-mono uppercase tracking-widest text-accent block">
+              Contato imediato
             </span>
-          </a>
 
-          <!-- WhatsApp Direto -->
-          <!-- TODO: Preencher com seu número de WhatsApp no formato internacional: 55 + DDD + Número -->
-          <a href="https://wa.me/5511994723395?text=Ol%C3%A1%20Matheus,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" data-magnetic class="group p-6 rounded-2xl bg-surface border border-border hover:border-accent transition-all duration-300 block">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-muted uppercase tracking-wider">WhatsApp</span>
-              <span class="text-xs font-mono text-accent group-hover:translate-x-1 transition-transform">Conversar agora ↗</span>
-            </div>
-            <span class="font-mono text-base sm:text-lg text-primary font-medium group-hover:text-white transition-colors">
-              +55 (11) 99472-3395
-            </span>
-          </a>
-
-          <!-- LinkedIn & GitHub em Duas Colunas -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="https://www.linkedin.com/in/matheus-giovanni-b808a3325/" target="_blank" rel="noopener noreferrer" data-magnetic class="group p-5 rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-300 block">
-              <span class="text-xs font-mono text-muted uppercase tracking-wider block mb-1">LinkedIn</span>
-              <span class="text-sm font-medium text-primary group-hover:text-accent flex items-center justify-between">
-                <span>Perfil profissional</span>
-                <span class="font-mono">↗</span>
+            <!-- TODO: preencher com meu número -->
+            <a
+              href="https://wa.me/5511994723395"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-magnetic
+              class="w-full inline-flex items-center justify-between gap-4 px-8 py-5 rounded-2xl bg-primary text-void font-semibold text-base sm:text-lg hover:bg-accent transition-all duration-300 shadow-[0_0_28px_rgba(255,255,255,0.06)] active:scale-95 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              <span class="flex flex-col text-left">
+                <span class="text-xs font-mono text-void/70 uppercase tracking-wider mb-0.5">Mensagem direta</span>
+                <span>Conversar no WhatsApp</span>
+              </span>
+              <span class="font-mono text-2xl transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1" aria-hidden="true">
+                ↗
               </span>
             </a>
+          </div>
 
-            <a href="https://github.com/Matheus298000" target="_blank" rel="noopener noreferrer" data-magnetic class="group p-5 rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-300 block">
-              <span class="text-xs font-mono text-muted uppercase tracking-wider block mb-1">GitHub</span>
-              <span class="text-sm font-medium text-primary group-hover:text-accent flex items-center justify-between">
-                <span>Repositórios</span>
-                <span class="font-mono">↗</span>
-              </span>
-            </a>
+          <!-- Links Secundários em Lista Editorial -->
+          <div class="space-y-3">
+            <span class="text-xs font-mono uppercase tracking-widest text-muted block">
+              Perfis profissionais
+            </span>
+
+            <div class="border-t border-border/80 divide-y divide-border/60">
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/matheus-giovanni-b808a3325/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-magnetic
+                class="py-4 sm:py-5 flex items-center justify-between text-base sm:text-lg font-medium text-muted hover:text-primary group transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg px-2 -mx-2"
+              >
+                <span class="font-display">LinkedIn</span>
+                <span class="font-mono text-sm text-faint group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+
+              <!-- GitHub -->
+              <a
+                href="https://github.com/Matheus298000"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-magnetic
+                class="py-4 sm:py-5 flex items-center justify-between text-base sm:text-lg font-medium text-muted hover:text-primary group transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg px-2 -mx-2"
+              >
+                <span class="font-display">GitHub</span>
+                <span class="font-mono text-sm text-faint group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Localidade & Disponibilidade -->
+          <div class="pt-4 border-t border-border/60 flex items-center gap-3 text-xs font-mono text-muted">
+            <span class="w-2 h-2 rounded-full bg-accent" aria-hidden="true"></span>
+            <span>São Paulo — SP • Presencial, híbrido ou remoto</span>
           </div>
 
         </div>
@@ -940,11 +1004,27 @@
   </main>
 
   <!-- ========================================================================
-       FOOTER SKELETON
+       FOOTER
        ======================================================================== -->
-  <footer class="border-t border-border/60 py-10 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-muted">
-    <p>© 2026 Matheus Giovanni. Todos os direitos reservados.</p>
-    <p class="text-faint">Feito com precisão, HTML5 semântico e Tailwind CSS.</p>
+  <footer class="border-t border-border/70 py-10 sm:py-12 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs font-mono text-muted">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+      <span class="text-primary font-medium">Matheus Giovanni</span>
+      <span class="hidden sm:inline text-faint">•</span>
+      <span>Feito por Matheus Giovanni</span>
+      <span class="hidden sm:inline text-faint">•</span>
+      <span>© <span id="current-year">2026</span></span>
+    </div>
+
+    <!-- Voltar ao topo com scroll suave -->
+    <a
+      href="#navbar"
+      id="back-to-top"
+      class="hover:text-accent transition-colors duration-300 flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded px-2 py-1 -mx-2"
+      aria-label="Voltar ao topo da página"
+    >
+      <span>Voltar ao topo</span>
+      <span class="transition-transform duration-300 group-hover:-translate-y-1" aria-hidden="true">↑</span>
+    </a>
   </footer>
 
   <!-- Script principal como Módulo ES2022+ -->
