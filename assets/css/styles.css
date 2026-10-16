@@ -1,7 +1,57 @@
 /* ==========================================================================
    assets/css/styles.css
-   Estilos específicos de micro-interações, cursor e física de rolagem
+   Estilos de micro-interações, cursor, física e temas (Noturno & Diurno)
    ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   SISTEMA DE TOKENS E CORES DINÂMICAS (Plano Noturno & Plano Diurno)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Plano Noturno (Padrão) - Estética Deep Obsidian & Azul Claro Tecnológico */
+  --color-void: #090a0f;
+  --color-surface: #101522;
+  --color-elevated: #172033;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(56, 189, 248, 0.35);
+  --color-accent: #38bdf8;          /* Azul Claro Elétrico (Tailwind Sky 400) */
+  --color-accent-glow: rgba(56, 189, 248, 0.28);
+  --color-accent-hover: #7dd3fc;    /* Sky 300 */
+  --color-primary: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-faint: #64748b;
+  --ambient-top: rgba(56, 189, 248, 0.08);
+  --ambient-accent: rgba(56, 189, 248, 0.04);
+  --ambient-bottom: rgba(99, 102, 241, 0.045);
+  --navbar-scrolled: rgba(9, 10, 15, 0.85);
+  --navbar-border: rgba(255, 255, 255, 0.08);
+  --grain-opacity: 0.035;
+}
+
+html.light {
+  /* Plano Diurno - Estética Editorial Studio Alabastro com Azul Céu Oceânico */
+  --color-void: #f8fafc;           /* Slate 50 */
+  --color-surface: #ffffff;        /* Branco Puro para Cards */
+  --color-elevated: #f1f5f9;       /* Slate 100 */
+  --color-border: rgba(15, 23, 42, 0.09);
+  --color-border-hover: rgba(2, 132, 199, 0.35);
+  --color-accent: #0284c7;          /* Azul Céu Intenso (Sky 600 - WCAG AA garantido) */
+  --color-accent-glow: rgba(2, 132, 199, 0.18);
+  --color-accent-hover: #0369a1;    /* Sky 700 */
+  --color-primary: #0f172a;        /* Slate 900 */
+  --color-muted: #475569;          /* Slate 600 */
+  --color-faint: #94a3b8;          /* Slate 400 */
+  --ambient-top: rgba(56, 189, 248, 0.06);
+  --ambient-accent: rgba(2, 132, 199, 0.035);
+  --ambient-bottom: rgba(99, 102, 241, 0.03);
+  --navbar-scrolled: rgba(248, 250, 252, 0.90);
+  --navbar-border: rgba(15, 23, 42, 0.08);
+  --grain-opacity: 0.02;
+}
+
+/* Transição global suave ao alternar o tema */
+body, #navbar, section, article, div, a, button {
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+}
 
 /* 1. Grain analógico sutil */
 .bg-grain {
@@ -11,17 +61,17 @@
   height: 100%;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.03;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 0);
+  opacity: var(--grain-opacity);
+  background-image: radial-gradient(var(--color-primary) 1px, transparent 0);
   background-size: 4px 4px;
 }
 
 /* 2. Efeito de vidro na barra de navegação ao rolar */
 #navbar.is-scrolled {
-  background-color: rgba(9, 9, 11, 0.85);
+  background-color: var(--navbar-scrolled);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--navbar-border);
   padding-top: 0.85rem;
   padding-bottom: 0.85rem;
 }
@@ -36,13 +86,11 @@
 }
 
 /* 4. Transições de entrada no scroll (Reveal Seguro com Progressive Enhancement) */
-/* Por padrão, todo conteúdo é 100% visível para garantir acessibilidade e evitar tela preta */
 [data-reveal] {
   opacity: 1;
   transform: none;
 }
 
-/* Oculta suavemente para animar APENAS quando o script confirma execução no navegador */
 html.js-reveal-active [data-reveal] {
   opacity: 0;
   transform: translate3d(0, 18px, 0);
@@ -59,14 +107,17 @@ html.js-reveal-active [data-reveal].is-revealed {
 [data-reveal-delay="60"]  { transition-delay: 60ms; }
 [data-reveal-delay="100"] { transition-delay: 100ms; }
 [data-reveal-delay="120"] { transition-delay: 120ms; }
+[data-reveal-delay="140"] { transition-delay: 140ms; }
 [data-reveal-delay="160"] { transition-delay: 160ms; }
 [data-reveal-delay="180"] { transition-delay: 180ms; }
 [data-reveal-delay="200"] { transition-delay: 200ms; }
 [data-reveal-delay="220"] { transition-delay: 220ms; }
 [data-reveal-delay="240"] { transition-delay: 240ms; }
+[data-reveal-delay="260"] { transition-delay: 260ms; }
 [data-reveal-delay="280"] { transition-delay: 280ms; }
 [data-reveal-delay="300"] { transition-delay: 300ms; }
 [data-reveal-delay="340"] { transition-delay: 340ms; }
+[data-reveal-delay="380"] { transition-delay: 380ms; }
 [data-reveal-delay="400"] { transition-delay: 400ms; }
 [data-reveal-delay="500"] { transition-delay: 500ms; }
 
@@ -105,7 +156,7 @@ html.js-reveal-active [data-reveal].is-revealed {
     left: 0;
     width: 6px;
     height: 6px;
-    background-color: #c8f135;
+    background-color: var(--color-accent);
     border-radius: 9999px;
     pointer-events: none;
     z-index: 9999;
@@ -119,7 +170,7 @@ html.js-reveal-active [data-reveal].is-revealed {
     left: 0;
     width: 32px;
     height: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid var(--color-border);
     border-radius: 9999px;
     pointer-events: none;
     z-index: 9998;
@@ -130,8 +181,8 @@ html.js-reveal-active [data-reveal].is-revealed {
   body.cursor-hover .custom-cursor-ring {
     width: 48px;
     height: 48px;
-    border-color: #c8f135;
-    background-color: rgba(200, 241, 53, 0.06);
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-glow);
   }
 }
 
@@ -180,7 +231,7 @@ html.js-reveal-active [data-reveal].is-revealed {
   }
 }
 
-/* 8. Iluminação e Profundidade Atmosférica (Aparência Internacional) */
+/* 8. Iluminação e Profundidade Atmosférica Dinâmica */
 .ambient-glow-top {
   position: absolute;
   top: 0;
@@ -189,7 +240,7 @@ html.js-reveal-active [data-reveal].is-revealed {
   width: 100%;
   max-width: 1200px;
   height: 600px;
-  background: radial-gradient(ellipse 65% 50% at 50% 0%, rgba(120, 119, 198, 0.09), transparent 75%);
+  background: radial-gradient(ellipse 65% 50% at 50% 0%, var(--ambient-top), transparent 75%);
   pointer-events: none;
   z-index: 0;
 }
@@ -200,7 +251,7 @@ html.js-reveal-active [data-reveal].is-revealed {
   right: -5%;
   width: 550px;
   height: 550px;
-  background: radial-gradient(circle, rgba(200, 241, 53, 0.035), transparent 70%);
+  background: radial-gradient(circle, var(--ambient-accent), transparent 70%);
   pointer-events: none;
   z-index: 0;
   filter: blur(40px);
@@ -212,7 +263,7 @@ html.js-reveal-active [data-reveal].is-revealed {
   left: -5%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(120, 119, 198, 0.04), transparent 70%);
+  background: radial-gradient(circle, var(--ambient-bottom), transparent 70%);
   pointer-events: none;
   z-index: 0;
   filter: blur(50px);
@@ -220,7 +271,7 @@ html.js-reveal-active [data-reveal].is-revealed {
 
 /* Foco tátil de alta visibilidade para navegação por teclado (WCAG AA) */
 :focus-visible {
-  outline: 2px solid #c8f135 !important;
+  outline: 2px solid var(--color-accent) !important;
   outline-offset: 3px !important;
 }
 

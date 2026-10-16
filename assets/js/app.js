@@ -464,12 +464,72 @@ function initReveal() {
 }
 
 // ============================================================================
+// 8. ALTERNADOR DE TEMAS: PLANO NOTURNO / PLANO DIURNO
+// ============================================================================
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  const mobileToggleBtn = document.getElementById('mobile-theme-toggle');
+  const sunIcon = document.getElementById('theme-icon-sun');
+  const moonIcon = document.getElementById('theme-icon-moon');
+  const mobileLabel = document.getElementById('mobile-theme-label');
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
+      try {
+        localStorage.setItem('portfolio-theme', 'light');
+      } catch {}
+      if (toggleBtn) {
+        toggleBtn.setAttribute('aria-label', 'Ativar Plano Noturno');
+        toggleBtn.setAttribute('title', 'Ativar Plano Noturno');
+      }
+      if (sunIcon) sunIcon.classList.add('hidden');
+      if (moonIcon) moonIcon.classList.remove('hidden');
+      if (mobileLabel) mobileLabel.textContent = 'Ativar Plano Noturno 🌙';
+    } else {
+      document.documentElement.classList.remove('light');
+      try {
+        localStorage.setItem('portfolio-theme', 'dark');
+      } catch {}
+      if (toggleBtn) {
+        toggleBtn.setAttribute('aria-label', 'Ativar Plano Diurno');
+        toggleBtn.setAttribute('title', 'Ativar Plano Diurno');
+      }
+      if (sunIcon) sunIcon.classList.remove('hidden');
+      if (moonIcon) moonIcon.classList.add('hidden');
+      if (mobileLabel) mobileLabel.textContent = 'Ativar Plano Diurno ☀️';
+    }
+  }
+
+  // Inicializa tema salvo
+  let isLight = false;
+  try {
+    const saved = localStorage.getItem('portfolio-theme');
+    isLight = saved === 'light';
+  } catch {}
+  
+  if (document.documentElement.classList.contains('light')) {
+    isLight = true;
+  }
+  applyTheme(isLight ? 'light' : 'dark');
+
+  const handleToggle = () => {
+    const isCurrentlyLight = document.documentElement.classList.contains('light');
+    applyTheme(isCurrentlyLight ? 'dark' : 'light');
+  };
+
+  if (toggleBtn) toggleBtn.addEventListener('click', handleToggle);
+  if (mobileToggleBtn) mobileToggleBtn.addEventListener('click', handleToggle);
+}
+
+// ============================================================================
 // INICIALIZAÇÃO GERAL
 // ============================================================================
 function startPortfolio() {
   initSmoothScroll();
   initCustomCursor();
   initNav();
+  initThemeToggle();
   initCertificacoes();
   initContact();
   initReveal();
@@ -481,3 +541,4 @@ if (document.readyState === 'loading') {
 } else {
   startPortfolio();
 }
+
