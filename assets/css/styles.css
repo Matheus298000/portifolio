@@ -34,7 +34,7 @@ html.light {
   --color-elevated: #f1f5f9;       /* Slate 100 */
   --color-border: rgba(15, 23, 42, 0.09);
   --color-border-hover: rgba(2, 132, 199, 0.35);
-  --color-accent: #0284c7;          /* Azul Céu Intenso (Sky 600 - WCAG AA garantido) */
+  --color-accent: #15638a;          /* Azul Céu Intenso (Sky 600 - WCAG AA garantido) */
   --color-accent-glow: rgba(2, 132, 199, 0.18);
   --color-accent-hover: #0369a1;    /* Sky 700 */
   --color-primary: #0f172a;        /* Slate 900 */
@@ -278,4 +278,21 @@ html.js-reveal-active [data-reveal].is-revealed {
 /* Otimização de toque em dispositivos mobile */
 a, button {
   touch-action: manipulation;
+}
+
+/* 9. Palavras em cor #15638a com fonte tamanho <= 16px sublinhadas
+   Garante sublinhado editorial (offset 4px, espessura 1.5px) com alto contraste */
+.text-\[\#15638a\],
+[style*="#15638a"],
+[style*="rgb(21, 99, 138)"],
+.underlined-accent,
+html.light p span.text-accent,
+html.light .text-accent.text-xs:not(.no-underline),
+html.light .text-accent.text-sm:not(.no-underline),
+html.light .text-accent.text-base:not(.no-underline),
+html.light .text-accent\/90 {
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
+  text-decoration-thickness: 1.5px !important;
+  text-decoration-color: currentColor !important;
 }

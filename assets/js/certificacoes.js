@@ -86,7 +86,7 @@ export function initCertificacoes() {
       : '';
 
     const detalhesHtml = cert.detalhes && !isPlaceholder(cert.detalhes)
-      ? `<span class="text-accent/90">${escapeHtml(cert.detalhes)}</span><span class="text-faint">•</span>`
+      ? `<span class="text-accent/90 underline underline-offset-4">${escapeHtml(cert.detalhes)}</span><span class="text-faint">•</span>`
       : '';
 
     return `

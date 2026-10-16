@@ -254,7 +254,6 @@ function initCertificacoes() {
       <span class="text-sm sm:text-base font-medium text-primary/90 group-hover:text-primary transition-colors">
         ${escapeHtml(cert.curso)}
       </span>
-      ${cert.detalhes ? `<span class="text-xs font-mono text-muted/70 mt-0.5">${escapeHtml(cert.detalhes)}</span>` : ''}
     `;
 
     const cargaHtml = `<span>${escapeHtml(cert.cargaHoraria)}</span>`;
@@ -298,7 +297,8 @@ function initCertificacoes() {
           <div class="md:col-span-7 lg:col-span-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6">
             <div class="flex flex-col">
               ${cursoHtml}
-              <div class="flex items-center gap-2 mt-1.5 text-xs font-mono text-muted">
+              <div class="flex items-center gap-2 mt-1.5 text-xs font-mono text-muted flex-wrap">
+                ${cert.detalhes ? `<span class="text-accent/90 underline underline-offset-4">${escapeHtml(cert.detalhes)}</span><span class="text-faint">•</span>` : ''}
                 ${cargaHtml}
                 <span class="text-faint">•</span>
                 ${anoHtml}
@@ -314,6 +314,7 @@ function initCertificacoes() {
   }).join('');
 
   container.innerHTML = itemsHtml;
+  initUnderlineForBlueText();
 }
 
 // ============================================================================
@@ -499,6 +500,7 @@ function initThemeToggle() {
       if (moonIcon) moonIcon.classList.add('hidden');
       if (mobileLabel) mobileLabel.textContent = 'Ativar Plano Diurno ☀️';
     }
+    initUnderlineForBlueText();
   }
 
   // Inicializa tema salvo
@@ -523,6 +525,52 @@ function initThemeToggle() {
 }
 
 // ============================================================================
+// SUBLINHADO AUTOMÁTICO PARA PALAVRAS EM #15638a (FONTE <= 16px)
+// ============================================================================
+function initUnderlineForBlueText() {
+  const targetRgb = 'rgb(21, 99, 138)'; // Cor #15638a
+  const allCandidates = document.querySelectorAll(
+    'p span, span, a, em, strong, mark, small'
+  );
+
+  allCandidates.forEach((el) => {
+    if (el.children.length > 0 && !el.classList.contains('text-accent')) {
+      return;
+    }
+
+    const text = el.textContent.trim();
+    if (
+      !text ||
+      text === '→' ||
+      text === '↗' ||
+      text === '↑' ||
+      text === '•' ||
+      text === '/' ||
+      /^\d{1,2}$/.test(text)
+    ) {
+      return;
+    }
+
+    const computed = window.getComputedStyle(el);
+    const fontSize = parseFloat(computed.fontSize) || 16;
+    const color = computed.color;
+    const isLightMode = document.documentElement.classList.contains('light');
+
+    const isBlue15638a =
+      color === targetRgb ||
+      (isLightMode &&
+        (el.classList.contains('text-accent') ||
+          el.className.includes('text-accent')));
+
+    if (isBlue15638a && fontSize <= 16.5) {
+      el.classList.add('underline', 'underline-offset-4');
+      el.style.textUnderlineOffset = '4px';
+      el.style.textDecorationThickness = '1.5px';
+    }
+  });
+}
+
+// ============================================================================
 // INICIALIZAÇÃO GERAL
 // ============================================================================
 function startPortfolio() {
@@ -534,6 +582,7 @@ function startPortfolio() {
   initContact();
   initReveal();
   initMagnetic();
+  initUnderlineForBlueText();
 }
 
 if (document.readyState === 'loading') {
@@ -541,4 +590,5 @@ if (document.readyState === 'loading') {
 } else {
   startPortfolio();
 }
+
 
