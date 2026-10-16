@@ -85,6 +85,10 @@ export function initCertificacoes() {
       ? `href="${escapeHtml(cert.link)}" target="_blank" rel="noopener noreferrer" aria-label="Ver certificado de ${escapeHtml(cert.instituicao)}"`
       : '';
 
+    const detalhesHtml = cert.detalhes && !isPlaceholder(cert.detalhes)
+      ? `<span class="text-accent/90">${escapeHtml(cert.detalhes)}</span><span class="text-faint">•</span>`
+      : '';
+
     return `
       <${tag} ${linkAttrs} data-reveal data-reveal-delay="${delay}" class="group relative block py-6 sm:py-8 px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-2xl border-b border-border/70 transition-all duration-300 hover:bg-surface/40 hover:backdrop-blur-sm">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-start md:items-center">
@@ -107,7 +111,8 @@ export function initCertificacoes() {
           <div class="md:col-span-7 lg:col-span-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6">
             <div class="flex flex-col">
               ${cursoHtml}
-              <div class="flex items-center gap-2 mt-1 text-xs font-mono text-muted">
+              <div class="flex items-center gap-2 mt-1 text-xs font-mono text-muted flex-wrap">
+                ${detalhesHtml}
                 ${cargaHtml}
                 <span class="text-faint">•</span>
                 ${anoHtml}

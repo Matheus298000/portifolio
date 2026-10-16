@@ -1,101 +1,99 @@
 /**
  * assets/js/app.js
- * Script integrado de alto desempenho para o Portfólio de Matheus Giovanni.
+ * Script otimizado e de alta resposta para o Portfólio de Matheus Giovanni.
  * 
  * Funciona universalmente:
  * - Localmente via protocolo file:/// (sem erros de CORS)
  * - Online via GitHub Pages / HTTPS
  * 
- * Inclui:
- * 1. Smooth Scroll de Precisão (Lenis com fallback)
- * 2. Cursor Tátil Customizado (Apenas ponteiros finos desktop)
- * 3. Barra de Navegação Adaptativa e Menu Fullscreen Acessível
- * 4. Renderização Dinâmica e Resiliente de Certificações
- * 5. Módulo de Contato (Copiar E-mail com aria-live, Ano Dinâmico, Voltar ao Topo)
- * 6. Física Magnética para Botões e Links ([data-magnetic])
- * 7. Reveal no Scroll com Progressive Enhancement (nunca esconde conteúdo se JS falhar)
+ * Rolagem 100% nativa e veloz: zero arrasto artificial de joystick ou roda do mouse.
  */
 
 // ============================================================================
-// DADOS DAS CERTIFICAÇÕES
+// DADOS REAIS DAS CERTIFICAÇÕES
 // ============================================================================
 const certificacoesData = [
   {
     id: "01",
     instituicao: "USP",
-    curso: "<!-- TODO: nome do curso -->",
-    cargaHoraria: "<!-- TODO: carga horária -->",
-    ano: "<!-- TODO: ano -->",
+    curso: "Java Básico (20h) & Java Orientado a Objetos (8h)",
+    detalhes: "Projeto COMPETEC / EACH USP",
+    cargaHoraria: "28 horas",
+    ano: "2026",
     link: null
   },
   {
     id: "02",
-    instituicao: "Accenture",
-    curso: "<!-- TODO: nome do curso -->",
-    cargaHoraria: "<!-- TODO: carga horária -->",
-    ano: "<!-- TODO: ano -->",
+    instituicao: "PET USP",
+    curso: "Montagem de Circuitos no Tinkercad e Programação em C++",
+    detalhes: "Projeto Conhecendo a Mecatrônica / PET Mecatrônica",
+    cargaHoraria: "10 horas",
+    ano: "2026",
     link: null
   },
   {
     id: "03",
-    instituicao: "DIO",
-    curso: "<!-- TODO: nome do curso -->",
-    cargaHoraria: "<!-- TODO: carga horária -->",
-    ano: "<!-- TODO: ano -->",
+    instituicao: "Accenture",
+    curso: "Java e Cloud",
+    detalhes: "Visão corporativa de computação em nuvem",
+    cargaHoraria: "1 hora",
+    ano: "2026",
     link: null
   },
   {
     id: "04",
-    instituicao: "SEBRAE",
-    curso: "<!-- TODO: nome do curso -->",
-    cargaHoraria: "<!-- TODO: carga horária -->",
-    ano: "<!-- TODO: ano -->",
+    instituicao: "Hype Data & AI",
+    curso: "Introdução a Machine Learning",
+    detalhes: "Fundamentos de modelos analíticos e dados",
+    cargaHoraria: "1,5 horas",
+    ano: "2026",
     link: null
   },
   {
     id: "05",
-    instituicao: "UFSCar",
-    curso: "<!-- TODO: nome do curso -->",
-    cargaHoraria: "<!-- TODO: carga horária -->",
-    ano: "<!-- TODO: ano -->",
+    instituicao: "DIO",
+    curso: "Introdução à Inteligência Artificial (1h) & Engenharia de Prompts (1h)",
+    detalhes: "Digital Innovation One",
+    cargaHoraria: "2 horas",
+    ano: "2026",
     link: null
   },
   {
     id: "06",
+    instituicao: "SEBRAE",
+    curso: "Ferramentas LEAN",
+    detalhes: "Otimização contínua de processos e eliminação de desperdícios",
+    cargaHoraria: "3 horas",
+    ano: "2026",
+    link: null
+  },
+  {
+    id: "07",
     instituicao: "Renapsi",
-    curso: "<!-- TODO: nome do curso -->",
-    cargaHoraria: "<!-- TODO: carga horária -->",
-    ano: "<!-- TODO: ano -->",
+    curso: "HTML5 (1h) & CSS (1h)",
+    detalhes: "Estruturação semântica e estilização para web",
+    cargaHoraria: "2 horas",
+    ano: "2026",
+    link: null
+  },
+  {
+    id: "08",
+    instituicao: "UFSCar",
+    curso: "Curso Básico de Japonês 5",
+    detalhes: "Universidade Federal de São Carlos",
+    cargaHoraria: "10 horas",
+    ano: "2026",
     link: null
   }
 ];
 
 // ============================================================================
-// 1. SMOOTH SCROLL (Lenis)
+// 1. ROLAGEM NATIVA DE ALTA VELOCIDADE & ÂNCORAS SUAVES
 // ============================================================================
 function initSmoothScroll() {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) return;
-
-  if (typeof window.Lenis !== 'undefined') {
-    try {
-      const lenis = new window.Lenis({
-        duration: 1.1,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-        touchMultiplier: 1.5,
-      });
-      window.LenisInstance = lenis;
-
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-    } catch (err) {
-      console.warn('Smooth scroll fallback ativo:', err);
-    }
-  }
+  // A rolagem do mouse e joystick é 100% nativa (sem interceptação pesada).
+  // Suavidade aplicada apenas na navegação por links internos via CSS scroll-smooth.
+  document.documentElement.style.scrollBehavior = 'smooth';
 }
 
 // ============================================================================
@@ -126,8 +124,8 @@ function initCustomCursor() {
   }, { passive: true });
 
   function renderCursor() {
-    ringX += (mouseX - ringX) * 0.16;
-    ringY += (mouseY - ringY) * 0.16;
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
     ring.style.transform = `translate3d(${ringX.toFixed(2)}px, ${ringY.toFixed(2)}px, 0) translate(-50%, -50%)`;
     requestAnimationFrame(renderCursor);
   }
@@ -194,7 +192,7 @@ function initNav() {
       });
     });
 
-    // Acessibilidade por Teclado: Fechar com Escape e Focus Trap
+    // Acessibilidade por Teclado: Escape e Focus Trap
     document.addEventListener('keydown', (e) => {
       if (!isOpen) return;
 
@@ -228,12 +226,6 @@ function initNav() {
 // ============================================================================
 // 4. RENDERIZAÇÃO DE CERTIFICAÇÕES
 // ============================================================================
-function isPlaceholder(val) {
-  if (!val) return true;
-  const str = String(val).trim();
-  return str.startsWith('<!--') || str.includes('TODO') || str === '';
-}
-
 function escapeHtml(str) {
   if (!str) return '';
   return String(str)
@@ -251,30 +243,26 @@ function initCertificacoes() {
   }
 
   const itemsHtml = certificacoesData.map((cert, index) => {
-    const delay = 100 + index * 60;
+    const delay = 60 + index * 50;
     const hasValidLink = Boolean(
       cert.link &&
-      !isPlaceholder(cert.link) &&
       cert.link.trim() !== '#' &&
       cert.link.trim() !== ''
     );
 
-    const cursoHtml = isPlaceholder(cert.curso)
-      ? `<!-- TODO: nome do curso --><span class="text-sm sm:text-base font-medium text-muted/70 italic">[Curso a definir]</span>`
-      : `<span class="text-sm sm:text-base font-medium text-primary/90 group-hover:text-primary transition-colors">${escapeHtml(cert.curso)}</span>`;
+    const cursoHtml = `
+      <span class="text-sm sm:text-base font-medium text-primary/90 group-hover:text-primary transition-colors">
+        ${escapeHtml(cert.curso)}
+      </span>
+      ${cert.detalhes ? `<span class="text-xs font-mono text-muted/70 mt-0.5">${escapeHtml(cert.detalhes)}</span>` : ''}
+    `;
 
-    const cargaHtml = isPlaceholder(cert.cargaHoraria)
-      ? `<!-- TODO: carga horária --><span>Carga horária a definir</span>`
-      : `<span>${escapeHtml(cert.cargaHoraria)}</span>`;
+    const cargaHtml = `<span>${escapeHtml(cert.cargaHoraria)}</span>`;
+    const anoHtml = `<span>${escapeHtml(cert.ano)}</span>`;
 
-    const anoHtml = isPlaceholder(cert.ano)
-      ? `<!-- TODO: ano --><span>Ano</span>`
-      : `<span>${escapeHtml(cert.ano)}</span>`;
-
-    let arrowActionHtml = `<!-- TODO: link do certificado (opcional) -->`;
+    let arrowActionHtml = '';
     if (hasValidLink) {
       arrowActionHtml = `
-        <!-- TODO: link do certificado (opcional) -->
         <div class="flex items-center gap-2 text-xs font-mono text-accent shrink-0 pt-2 sm:pt-0">
           <span class="inline sm:hidden md:inline md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
             Ver certificado
@@ -310,7 +298,7 @@ function initCertificacoes() {
           <div class="md:col-span-7 lg:col-span-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6">
             <div class="flex flex-col">
               ${cursoHtml}
-              <div class="flex items-center gap-2 mt-1 text-xs font-mono text-muted">
+              <div class="flex items-center gap-2 mt-1.5 text-xs font-mono text-muted">
                 ${cargaHtml}
                 <span class="text-faint">•</span>
                 ${anoHtml}
@@ -388,21 +376,17 @@ function initContact() {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // C. Voltar ao Topo Suave
+  // C. Voltar ao Topo Rápido e Suave
   const backToTopBtn = document.getElementById('back-to-top');
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', (e) => {
       e.preventDefault();
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      if (window.LenisInstance) {
-        window.LenisInstance.scrollTo(0, { immediate: prefersReducedMotion });
-      } else {
-        window.scrollTo({
-          top: 0,
-          behavior: prefersReducedMotion ? 'auto' : 'smooth'
-        });
-      }
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
 
       try {
         history.replaceState(null, '', '#navbar');
@@ -454,13 +438,11 @@ function initReveal() {
 
   if (!elements.length) return;
 
-  // Se o usuário prefere redução de movimento, tudo fica visível imediatamente
   if (prefersReducedMotion) {
     elements.forEach((el) => el.classList.add('is-revealed'));
     return;
   }
 
-  // Ativa a classe no elemento raiz APENAS quando o script está em execução segura
   document.documentElement.classList.add('js-reveal-active');
 
   const observerOptions = {
