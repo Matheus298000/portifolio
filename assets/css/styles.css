@@ -35,23 +35,38 @@
   transform: translateY(-4px) rotate(-45deg);
 }
 
-/* 4. Transições de entrada no scroll (Reveal) */
+/* 4. Transições de entrada no scroll (Reveal Seguro com Progressive Enhancement) */
+/* Por padrão, todo conteúdo é 100% visível para garantir acessibilidade e evitar tela preta */
 [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Oculta suavemente para animar APENAS quando o script confirma execução no navegador */
+html.js-reveal-active [data-reveal] {
   opacity: 0;
-  transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 18px, 0);
   transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
-[data-reveal].is-revealed {
+html.js-reveal-active [data-reveal].is-revealed {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
 
+[data-reveal-delay="60"]  { transition-delay: 60ms; }
 [data-reveal-delay="100"] { transition-delay: 100ms; }
+[data-reveal-delay="120"] { transition-delay: 120ms; }
+[data-reveal-delay="160"] { transition-delay: 160ms; }
+[data-reveal-delay="180"] { transition-delay: 180ms; }
 [data-reveal-delay="200"] { transition-delay: 200ms; }
+[data-reveal-delay="220"] { transition-delay: 220ms; }
+[data-reveal-delay="240"] { transition-delay: 240ms; }
+[data-reveal-delay="280"] { transition-delay: 280ms; }
 [data-reveal-delay="300"] { transition-delay: 300ms; }
+[data-reveal-delay="340"] { transition-delay: 340ms; }
 [data-reveal-delay="400"] { transition-delay: 400ms; }
 [data-reveal-delay="500"] { transition-delay: 500ms; }
 
@@ -154,4 +169,53 @@
   .custom-cursor-ring {
     display: none !important;
   }
+}
+
+/* 8. Iluminação e Profundidade Atmosférica (Aparência Internacional) */
+.ambient-glow-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  height: 600px;
+  background: radial-gradient(ellipse 65% 50% at 50% 0%, rgba(120, 119, 198, 0.09), transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-glow-accent {
+  position: absolute;
+  top: 25%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(200, 241, 53, 0.035), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(40px);
+}
+
+.ambient-glow-bottom {
+  position: absolute;
+  bottom: 5%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(120, 119, 198, 0.04), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(50px);
+}
+
+/* Foco tátil de alta visibilidade para navegação por teclado (WCAG AA) */
+:focus-visible {
+  outline: 2px solid #c8f135 !important;
+  outline-offset: 3px !important;
+}
+
+/* Otimização de toque em dispositivos mobile */
+a, button {
+  touch-action: manipulation;
 }

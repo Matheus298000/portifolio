@@ -28,19 +28,19 @@
       theme: {
         extend: {
           colors: {
-            void: '#09090b',
-            surface: '#111114',
-            elevated: '#18181c',
+            void: '#090a0d',
+            surface: '#121217',
+            elevated: '#1a1a22',
             border: 'rgba(255, 255, 255, 0.08)',
-            'border-hover': 'rgba(255, 255, 255, 0.18)',
+            'border-hover': 'rgba(255, 255, 255, 0.20)',
             accent: {
               DEFAULT: '#c8f135',
               glow: 'rgba(200, 241, 53, 0.22)',
               hover: '#b5dd26'
             },
             primary: '#f4f4f6',
-            muted: '#8e8e99',
-            faint: '#52525c'
+            muted: '#9ca3af',
+            faint: '#6b7280'
           },
           fontFamily: {
             display: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -66,8 +66,10 @@
   <!-- Textura analógica de ruído (Grain sutil) -->
   <div class="bg-grain" aria-hidden="true"></div>
 
-  <!-- Atmosfera de luz sutil no topo do Hero -->
-  <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[520px] bg-gradient-to-b from-white/[0.035] via-transparent to-transparent blur-3xl -z-10" aria-hidden="true"></div>
+  <!-- Iluminação e Profundidade Atmosférica Global -->
+  <div class="ambient-glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow-accent" aria-hidden="true"></div>
+  <div class="ambient-glow-bottom" aria-hidden="true"></div>
 
   <!-- ========================================================================
        NAVBAR FIXA E RESPONSIVA
@@ -1027,7 +1029,7 @@
     </a>
   </footer>
 
-  <!-- Script principal como Módulo ES2022+ -->
-  <script type="module" src="assets/js/main.js"></script>
+  <!-- Script principal otimizado e universal (compatível tanto com file:/// quanto com https://) -->
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
