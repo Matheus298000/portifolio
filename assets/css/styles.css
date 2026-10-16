@@ -147,20 +147,29 @@ html.js-reveal-active [data-reveal].is-revealed {
   animation: scrollMove 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
-/* 7. Suporte a preferências de movimento reduzido (Acessibilidade) */
+/* 7. Suporte a preferências de movimento reduzido (Acessibilidade WCAG AA) */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
 
-  [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
+  .animate-pulse,
+  .animate-scroll-travel {
+    animation: none !important;
   }
 
-  .timeline-draw-line {
+  [data-reveal],
+  html.js-reveal-active [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .timeline-draw-line,
+  html.js-reveal-active .timeline-draw-line {
     transform: none !important;
     transition: none !important;
   }

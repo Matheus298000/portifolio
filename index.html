@@ -3,17 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Matheus Giovanni — Estudante de Desenvolvimento de Sistemas na Etec de Itaquera e Jovem Aprendiz na CASSI. Focado em engenharia de software e soluções com rigor técnico.">
-  <meta name="author" content="Matheus Giovanni">
-  
-  <!-- Open Graph / Redes Sociais -->
+  <meta name="description" content="Portfólio profissional de Matheus Giovanni — Estudante de Desenvolvimento de Sistemas na Etec de Itaquera e Jovem Aprendiz na CASSI. Focado em engenharia de software e soluções com rigor técnico.">
+  <meta name="author" content="Matheus Giovanni Azevedo Magalhães">
+  <link rel="canonical" href="https://Matheus298000.github.io/">
+
+  <!-- Favicon SVG (Iniciais MG) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <title>Matheus Giovanni — Desenvolvedor de Software</title>
+
+  <!-- Open Graph / Meta Compartilhamento -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://Matheus298000.github.io/">
   <meta property="og:title" content="Matheus Giovanni — Desenvolvedor de Software">
-  <meta property="og:description" content="Estudante de Desenvolvimento de Sistemas na Etec de Itaquera e Jovem Aprendiz na CASSI.">
+  <meta property="og:description" content="Estudante do 2º ano de Desenvolvimento de Sistemas na Etec de Itaquera e Jovem Aprendiz na gerência técnica da CASSI.">
   <meta property="og:site_name" content="Matheus Giovanni Portfolio">
-  
-  <title>Matheus Giovanni — Desenvolvedor de Software</title>
+  <!-- TODO: Adicione sua imagem de preview (1200x630px) em assets/img/og-preview.png -->
+  <meta property="og:image" content="https://Matheus298000.github.io/assets/img/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portfólio de Matheus Giovanni">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Matheus Giovanni — Desenvolvedor de Software">
+  <meta name="twitter:description" content="Estudante do 2º ano de Desenvolvimento de Sistemas na Etec de Itaquera e Jovem Aprendiz na gerência técnica da CASSI.">
+  <!-- TODO: Adicione sua imagem de preview (1200x630px) em assets/img/og-preview.png -->
+  <meta name="twitter:image" content="https://Matheus298000.github.io/assets/img/og-preview.png">
+  <meta name="twitter:image:alt" content="Portfólio de Matheus Giovanni">
+
+  <!-- Dados Estruturados Schema.org (JSON-LD) para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Matheus Giovanni Azevedo Magalhães",
+    "alternateName": "Matheus Giovanni",
+    "birthDate": "2009-08-17",
+    "jobTitle": "Jovem Aprendiz — Gerência Técnica / Desenvolvedor de Software em Formação",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Etec de Itaquera",
+      "programName": "Ensino Médio Técnico em Desenvolvimento de Sistemas"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "CASSI — Caixa de Assistência dos Funcionários do Banco do Brasil"
+    },
+    "sameAs": [
+      "https://github.com/Matheus298000",
+      "https://www.linkedin.com/in/matheus-giovanni-b808a3325/"
+    ],
+    "url": "https://Matheus298000.github.io/"
+  }
+  </script>
 
   <!-- Google Fonts: Plus Jakarta Sans (Display) + Inter (Corpo) + JetBrains Mono (Detalhes) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,13 +106,18 @@
     };
   </script>
 
-  <!-- Lenis Smooth Scroll CDN (Leve, garante suavidade de agência de alto padrão) -->
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Lenis Smooth Scroll CDN (defer para não bloquear renderização) -->
+  <script defer src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
   <!-- Folha de estilo customizada para complementos de física e efeitos -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-void text-primary font-sans antialiased selection:bg-accent selection:text-void relative min-h-screen overflow-x-hidden">
+
+  <!-- Acessibilidade: Link para pular direto para o conteúdo principal (WCAG AA) -->
+  <a href="#sobre" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-3 focus:bg-accent focus:text-void focus:font-mono focus:text-xs focus:font-bold focus:rounded-full focus:shadow-2xl focus:ring-2 focus:ring-primary">
+    Pular para o conteúdo principal
+  </a>
 
   <!-- Textura analógica de ruído (Grain sutil) -->
   <div class="bg-grain" aria-hidden="true"></div>
@@ -78,31 +134,31 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 flex items-center justify-between">
       
       <!-- Marca / Nome com indicador de disponibilidade -->
-      <a href="#hero" class="flex items-center gap-3 group focus-visible:rounded" aria-label="Voltar ao início">
+      <a href="#hero" class="flex items-center gap-3 min-h-[44px] py-1 group focus-visible:rounded" aria-label="Voltar ao início do portfólio de Matheus Giovanni">
         <span class="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_theme('colors.accent.glow')]"></span>
         <span class="font-display font-bold tracking-tight text-base sm:text-lg text-primary group-hover:text-white transition-colors duration-300">
           Matheus Giovanni
         </span>
       </a>
 
-      <!-- Navegação Desktop -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
-        <a href="#sobre" class="hover:text-primary transition-colors duration-300 py-1">Sobre</a>
-        <a href="#trajetoria" class="hover:text-primary transition-colors duration-300 py-1">Trajetória</a>
-        <a href="#stack" class="hover:text-primary transition-colors duration-300 py-1">Stack</a>
-        <a href="#certificacoes" class="hover:text-primary transition-colors duration-300 py-1">Certificações</a>
-        <a href="#contato" class="hover:text-primary transition-colors duration-300 py-1">Contato</a>
+      <!-- Navegação Desktop (Alvos de toque acessíveis >= 44px) -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-muted" aria-label="Navegação principal">
+        <a href="#sobre" class="hover:text-primary transition-colors duration-300 py-2.5 px-2 min-h-[44px] inline-flex items-center">Sobre</a>
+        <a href="#trajetoria" class="hover:text-primary transition-colors duration-300 py-2.5 px-2 min-h-[44px] inline-flex items-center">Trajetória</a>
+        <a href="#stack" class="hover:text-primary transition-colors duration-300 py-2.5 px-2 min-h-[44px] inline-flex items-center">Stack</a>
+        <a href="#certificacoes" class="hover:text-primary transition-colors duration-300 py-2.5 px-2 min-h-[44px] inline-flex items-center">Certificações</a>
+        <a href="#contato" class="hover:text-primary transition-colors duration-300 py-2.5 px-2 min-h-[44px] inline-flex items-center">Contato</a>
       </nav>
 
       <!-- CTA Desktop + Gatilho Mobile -->
       <div class="flex items-center gap-4">
-        <a href="#contato" data-magnetic class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border hover:border-accent text-xs uppercase tracking-wider font-mono text-primary hover:text-white hover:bg-surface transition-all duration-300 active:scale-95">
+        <a href="#contato" data-magnetic class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full border border-border hover:border-accent text-xs uppercase tracking-wider font-mono text-primary hover:text-white hover:bg-surface transition-all duration-300 active:scale-95">
           <span>Falar comigo</span>
-          <span class="text-accent">→</span>
+          <span class="text-accent" aria-hidden="true">→</span>
         </a>
 
-        <!-- Botão Menu Mobile (Acessível) -->
-        <button id="mobile-toggle" class="md:hidden flex flex-col justify-center gap-1.5 w-10 h-10 p-2 text-primary focus-visible:rounded" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+        <!-- Botão Menu Mobile (Acessível >= 44x44px) -->
+        <button id="mobile-toggle" class="md:hidden flex flex-col items-center justify-center gap-1.5 w-11 h-11 min-h-[44px] min-w-[44px] p-2.5 text-primary focus-visible:rounded" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
           <span class="line-1 w-5 h-0.5 bg-primary rounded-full transition-transform duration-300 origin-center"></span>
           <span class="line-2 w-5 h-0.5 bg-primary rounded-full transition-transform duration-300 origin-center"></span>
         </button>
@@ -116,12 +172,12 @@
   <div id="mobile-menu" class="fixed inset-0 bg-void/95 backdrop-blur-2xl z-40 flex flex-col justify-between p-8 sm:p-12 opacity-0 pointer-events-none transition-opacity duration-500 md:hidden" aria-hidden="true">
     <div class="pt-20">
       <span class="text-xs uppercase font-mono tracking-widest text-faint block mb-8">Navegação</span>
-      <nav class="flex flex-col gap-6">
-        <a href="#sobre" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300">Sobre</a>
-        <a href="#trajetoria" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300">Trajetória</a>
-        <a href="#stack" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300">Stack</a>
-        <a href="#certificacoes" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300">Certificações</a>
-        <a href="#contato" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300">Contato</a>
+      <nav class="flex flex-col gap-4" aria-label="Menu móvel">
+        <a href="#sobre" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300 py-2 min-h-[44px] flex items-center">Sobre</a>
+        <a href="#trajetoria" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300 py-2 min-h-[44px] flex items-center">Trajetória</a>
+        <a href="#stack" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300 py-2 min-h-[44px] flex items-center">Stack</a>
+        <a href="#certificacoes" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300 py-2 min-h-[44px] flex items-center">Certificações</a>
+        <a href="#contato" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300 py-2 min-h-[44px] flex items-center">Contato</a>
       </nav>
     </div>
 
@@ -190,29 +246,29 @@
       <!-- Rodapé da Hero: Redes Sociais & Indicador de Scroll -->
       <div data-reveal data-reveal-delay="500" class="pt-8 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs font-mono">
         
-        <!-- Links Sociais Diretos -->
-        <div class="flex flex-wrap items-center gap-6 text-muted">
-          <a href="https://github.com/Matheus298000" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors duration-300 flex items-center gap-1 group">
+        <!-- Links Sociais Diretos (Alvos de toque >= 44px) -->
+        <div class="flex flex-wrap items-center gap-4 sm:gap-6 text-muted">
+          <a href="https://github.com/Matheus298000" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors duration-300 min-h-[44px] inline-flex items-center gap-1.5 px-1 group" aria-label="Acessar perfil de Matheus Giovanni no GitHub (abre em nova aba)">
             <span>GitHub</span>
-            <span class="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300">↗</span>
+            <span class="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" aria-hidden="true">↗</span>
           </a>
-          <a href="https://www.linkedin.com/in/matheus-giovanni-b808a3325/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors duration-300 flex items-center gap-1 group">
+          <a href="https://www.linkedin.com/in/matheus-giovanni-b808a3325/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors duration-300 min-h-[44px] inline-flex items-center gap-1.5 px-1 group" aria-label="Acessar perfil de Matheus Giovanni no LinkedIn (abre em nova aba)">
             <span>LinkedIn</span>
-            <span class="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300">↗</span>
+            <span class="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" aria-hidden="true">↗</span>
           </a>
           <!-- TODO: Preencher com seu número de WhatsApp no formato internacional: 55 + DDD + Número -->
-          <a href="https://wa.me/5511994723395" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors duration-300 flex items-center gap-1 group">
+          <a href="https://wa.me/5511994723395" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors duration-300 min-h-[44px] inline-flex items-center gap-1.5 px-1 group" aria-label="Conversar com Matheus Giovanni no WhatsApp (abre em nova aba)">
             <span>WhatsApp</span>
-            <span class="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300">↗</span>
+            <span class="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" aria-hidden="true">↗</span>
           </a>
-          <a href="mailto:matheusmgamg@gmail.com" class="hover:text-accent transition-colors duration-300 flex items-center gap-1 group">
+          <a href="mailto:matheusmgamg@gmail.com" class="hover:text-accent transition-colors duration-300 min-h-[44px] inline-flex items-center gap-1.5 px-1 group" aria-label="Enviar e-mail para matheusmgamg@gmail.com">
             <span>E-mail</span>
-            <span class="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300">↗</span>
+            <span class="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" aria-hidden="true">↗</span>
           </a>
         </div>
 
         <!-- Indicador de Scroll Animado -->
-        <a href="#sobre" class="hidden sm:flex items-center gap-3 text-muted hover:text-primary transition-colors duration-300 group" aria-label="Rolar para a seção sobre">
+        <a href="#sobre" class="hidden sm:inline-flex items-center gap-3 min-h-[44px] py-1 text-muted hover:text-primary transition-colors duration-300 group" aria-label="Rolar para a seção sobre">
           <span class="uppercase tracking-widest text-[10px]">Scroll</span>
           <div class="w-4 h-7 rounded-full border border-border flex items-start justify-center p-1 overflow-hidden" aria-hidden="true">
             <span class="w-1 h-1.5 rounded-full bg-accent animate-scroll-travel"></span>
@@ -1017,11 +1073,11 @@
       <span>© <span id="current-year">2026</span></span>
     </div>
 
-    <!-- Voltar ao topo com scroll suave -->
+    <!-- Voltar ao topo com scroll suave (Alvo de toque >= 44px) -->
     <a
       href="#navbar"
       id="back-to-top"
-      class="hover:text-accent transition-colors duration-300 flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded px-2 py-1 -mx-2"
+      class="hover:text-accent transition-colors duration-300 min-h-[44px] inline-flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded px-3 py-2 -mx-3"
       aria-label="Voltar ao topo da página"
     >
       <span>Voltar ao topo</span>
@@ -1030,6 +1086,6 @@
   </footer>
 
   <!-- Script principal otimizado e universal (compatível tanto com file:/// quanto com https://) -->
-  <script src="assets/js/app.js"></script>
+  <script defer src="assets/js/app.js"></script>
 </body>
 </html>

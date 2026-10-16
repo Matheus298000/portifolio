@@ -32,6 +32,7 @@ export function initNav() {
     mobileMenu.classList.add('pointer-events-auto', 'opacity-100');
     document.body.classList.add('overflow-hidden');
     mobileToggle.classList.add('is-active');
+    setTimeout(() => mobileLinks[0]?.focus(), 60);
   };
 
   const closeMenu = () => {
@@ -59,11 +60,33 @@ export function initNav() {
     link.addEventListener('click', closeMenu);
   });
 
-  // Fecha com a tecla ESC para acessibilidade
+  // Acessibilidade por Teclado: Escape e Focus Trap
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileToggle.getAttribute('aria-expanded') === 'true') {
+    const isOpen = mobileToggle.getAttribute('aria-expanded') === 'true';
+    if (!isOpen) return;
+
+    if (e.key === 'Escape') {
       closeMenu();
       mobileToggle.focus();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const focusableElements = [mobileToggle, ...mobileLinks];
+      const firstEl = focusableElements[0];
+      const lastEl = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
     }
   });
 

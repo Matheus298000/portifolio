@@ -177,6 +177,7 @@ function initNav() {
         mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
         mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
         document.body.style.overflow = 'hidden';
+        setTimeout(() => mobileLinks[0]?.focus(), 60);
       } else {
         toggleBtn.classList.remove('is-active');
         mobileMenu.classList.add('opacity-0', 'pointer-events-none');
@@ -193,10 +194,32 @@ function initNav() {
       });
     });
 
+    // Acessibilidade por Teclado: Fechar com Escape e Focus Trap
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (!isOpen) return;
+
+      if (e.key === 'Escape') {
         toggleMenu();
         toggleBtn.focus();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const focusableElements = [toggleBtn, ...mobileLinks];
+        const firstEl = focusableElements[0];
+        const lastEl = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstEl) {
+            e.preventDefault();
+            lastEl.focus();
+          }
+        } else {
+          if (document.activeElement === lastEl) {
+            e.preventDefault();
+            firstEl.focus();
+          }
+        }
       }
     });
   }
