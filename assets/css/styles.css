@@ -1,0 +1,185 @@
+/* ==========================================================================
+   ASSETS/CSS/STYLES.CSS — Experiência Imersiva & Micro-interações
+   Contém exclusivamente o que extrapola os utilitários do Tailwind:
+   - Textura de Grain (ruído sutil analógico)
+   - Cursor personalizado reativo (Desktop com ponteiro fino)
+   - Estados de animação para o Reveal on Scroll
+   - Scroll indicator & Acessibilidade (prefers-reduced-motion)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. OVERLAY DE GRAIN (Ruído sutil com alta performance via SVG Data-URI)
+   -------------------------------------------------------------------------- */
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* --------------------------------------------------------------------------
+   NAVBAR SCROLLED & HAMBURGER STATES
+   -------------------------------------------------------------------------- */
+#navbar.is-scrolled {
+  background-color: rgba(9, 9, 11, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+
+/* Hamburger toggle animado */
+#mobile-toggle.is-active .line-1 {
+  transform: translateY(4px) rotate(45deg);
+}
+
+#mobile-toggle.is-active .line-2 {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   2. REVEAL ON SCROLL (Transições em Transform e Opacity)
+   -------------------------------------------------------------------------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Delays escalonados automáticos para grupos */
+[data-reveal-delay="100"] { transition-delay: 100ms; }
+[data-reveal-delay="200"] { transition-delay: 200ms; }
+[data-reveal-delay="300"] { transition-delay: 300ms; }
+[data-reveal-delay="400"] { transition-delay: 400ms; }
+[data-reveal-delay="500"] { transition-delay: 500ms; }
+
+/* --------------------------------------------------------------------------
+   3. CURSOR CUSTOMIZADO DISCRETO (Apenas em desktop com mouse)
+   -------------------------------------------------------------------------- */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: default;
+  }
+
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: theme('colors.accent.DEFAULT');
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                height 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.25s ease,
+                opacity 0.25s ease;
+  }
+
+  .custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 9997;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                height 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.3s ease,
+                background-color 0.3s ease;
+  }
+
+  body.cursor-hover .custom-cursor-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+  }
+
+  body.cursor-hover .custom-cursor-ring {
+    width: 48px;
+    height: 48px;
+    border-color: theme('colors.accent.DEFAULT');
+    background-color: rgba(200, 241, 53, 0.05);
+  }
+}
+
+/* Oculta o cursor falso em dispositivos touch */
+@media (hover: none) or (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. INDICADOR DE SCROLL & MICRO-KEYFRAMES
+   -------------------------------------------------------------------------- */
+@keyframes scrollTravel {
+  0% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 150%, 0);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-travel {
+  animation: scrollTravel 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* --------------------------------------------------------------------------
+   5. ACESSIBILIDADE & PREFERS-REDUCED-MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}
+
+/* Foco visível consistente para navegação por teclado */
+:focus-visible {
+  outline: 2px solid theme('colors.accent.DEFAULT');
+  outline-offset: 4px;
+}
