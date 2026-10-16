@@ -85,6 +85,7 @@
 
       <!-- Navegação Desktop -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+        <a href="#sobre" class="hover:text-primary transition-colors duration-300 py-1">Sobre</a>
         <a href="#trajetoria" class="hover:text-primary transition-colors duration-300 py-1">Trajetória</a>
         <a href="#stack" class="hover:text-primary transition-colors duration-300 py-1">Stack</a>
         <a href="#certificacoes" class="hover:text-primary transition-colors duration-300 py-1">Certificações</a>
@@ -114,6 +115,7 @@
     <div class="pt-20">
       <span class="text-xs uppercase font-mono tracking-widest text-faint block mb-8">Navegação</span>
       <nav class="flex flex-col gap-6">
+        <a href="#sobre" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300">Sobre</a>
         <a href="#trajetoria" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300">Trajetória</a>
         <a href="#stack" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300">Stack</a>
         <a href="#certificacoes" class="mobile-nav-link font-display text-3xl font-bold text-primary hover:text-accent transition-colors duration-300">Certificações</a>
@@ -175,7 +177,7 @@
             </a>
 
             <!-- CTA Secundário Magnético -->
-            <a href="#trajetoria" data-magnetic class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-border hover:border-border-hover bg-surface/50 hover:bg-surface text-primary font-medium text-sm transition-all duration-300 active:scale-95">
+            <a href="#sobre" data-magnetic class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-border hover:border-border-hover bg-surface/50 hover:bg-surface text-primary font-medium text-sm transition-all duration-300 active:scale-95">
               <span>Ver trajetória</span>
             </a>
           </div>
@@ -208,7 +210,7 @@
         </div>
 
         <!-- Indicador de Scroll Animado -->
-        <a href="#trajetoria" class="hidden sm:flex items-center gap-3 text-muted hover:text-primary transition-colors duration-300 group" aria-label="Rolar para a seção de trajetória">
+        <a href="#sobre" class="hidden sm:flex items-center gap-3 text-muted hover:text-primary transition-colors duration-300 group" aria-label="Rolar para a seção sobre">
           <span class="uppercase tracking-widest text-[10px]">Scroll</span>
           <div class="w-4 h-7 rounded-full border border-border flex items-start justify-center p-1 overflow-hidden" aria-hidden="true">
             <span class="w-1 h-1.5 rounded-full bg-accent animate-scroll-travel"></span>
@@ -220,18 +222,126 @@
     </section>
 
     <!-- ========================================================================
-         PLACEHOLDERS PARA AS PRÓXIMAS ETAPAS (Preservados e prontos para expansão)
+         01. SEÇÃO SOBRE (#sobre)
          ======================================================================== -->
+    <section id="sobre" class="py-24 sm:py-32 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto border-t border-border">
+      
+      <!-- Topo: Tag de Identificação -->
+      <div data-reveal class="mb-12 sm:mb-16">
+        <span class="text-xs uppercase font-mono tracking-widest text-accent block">01 / Sobre</span>
+      </div>
+
+      <!-- Grid Assimétrico em Duas Colunas (Desktop) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Coluna Esquerda: Frase de Impacto em Tipografia Grande + Espaço para Foto -->
+        <div data-reveal data-reveal-delay="100" class="lg:col-span-7 flex flex-col justify-between">
+          <h2 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[2.85rem] font-bold tracking-tight text-primary leading-[1.14] text-balance mb-8">
+            Aprendo construindo na prática e uno o rigor do código à <span class="text-accent underline underline-offset-8 decoration-accent/40">realidade</span> do ambiente corporativo.
+          </h2>
+
+          <!-- Espaço reservado e comentado para foto (Opcional, com moldura e vidro sutil) -->
+          <!-- TODO: foto do Matheus (Substitua este espaço reservado ou adicione sua imagem em assets/img/) -->
+          <div class="relative w-full max-w-lg aspect-[16/10] sm:aspect-[21/10] rounded-2xl border border-border/80 bg-surface/40 backdrop-blur-sm overflow-hidden flex items-center justify-center group">
+            <div class="absolute inset-0 bg-gradient-to-tr from-surface/80 via-void/50 to-surface/20 pointer-events-none"></div>
+            <div class="relative z-10 flex flex-col items-center gap-2.5 text-center p-6">
+              <div class="w-12 h-12 rounded-full border border-border bg-void/80 flex items-center justify-center font-mono text-sm font-semibold text-accent shadow-sm">
+                MG
+              </div>
+              <span class="text-xs font-mono text-muted uppercase tracking-wider">
+                Matheus Giovanni • São Paulo, SP
+              </span>
+              <span class="text-[11px] font-mono text-faint">
+                Espaço reservado para foto profissional
+              </span>
+            </div>
+            <!-- Para exibir sua foto, descomente a linha abaixo e insira o caminho correto: -->
+            <!-- <img src="assets/img/matheus.jpg" alt="Foto de Matheus Giovanni" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700" /> -->
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Dois Parágrafos em Primeira Pessoa (Tom direto e humano) -->
+        <div data-reveal data-reveal-delay="200" class="lg:col-span-5 flex flex-col gap-6 text-base sm:text-lg text-muted leading-relaxed font-normal pt-2">
+          <p>
+            Estudo Desenvolvimento de Sistemas na <strong class="text-primary font-medium">Etec de Itaquera</strong> e atuo como Jovem Aprendiz na gerência técnica da <strong class="text-primary font-medium">CASSI</strong>. Na prática, divido meus dias entre aprofundar fundamentos em lógica de programação e lidar com regras de negócio, conferência e processos reais que exigem atenção absoluta.
+          </p>
+
+          <p>
+            Meu foco central é a engenharia de software — escrever código limpo em linguagens estruturadas, modelar bancos de dados consistentes e explorar noções práticas de Inteligência Artificial e Cloud. Busco uma oportunidade de estágio para somar com disciplina, aprender com desenvolvedores experientes e evoluir constantemente como profissional.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Abaixo: Linha do Tempo Horizontal Minimalista (Vertical no Mobile) -->
+      <div data-reveal data-reveal-delay="300" class="mt-20 pt-10 border-t border-border/40">
+        <span class="text-xs uppercase font-mono tracking-widest text-faint block mb-8">Marcos de Formação & Prática</span>
+
+        <!-- Linha do Tempo Desktop: Horizontal com linha fina que se desenha -->
+        <div class="hidden md:block relative">
+          <!-- Linha base de fundo -->
+          <div class="absolute top-2.5 left-0 w-full h-[1px] bg-border/60"></div>
+          <!-- Linha que se desenha no scroll via scaleX -->
+          <div class="timeline-draw-line absolute top-2.5 left-0 w-full h-[1px] bg-accent/70"></div>
+
+          <div class="grid grid-cols-2 gap-12 relative z-10">
+            <!-- Marco 1: Etec de Itaquera -->
+            <div class="flex flex-col items-start pr-6">
+              <span class="w-3 h-3 rounded-full bg-accent ring-4 ring-void mb-6 shadow-[0_0_10px_theme('colors.accent.glow')]"></span>
+              <span class="text-xs font-mono text-muted mb-1">Ensino Médio Técnico • 2º ano</span>
+              <h3 class="font-display text-lg font-bold text-primary mb-1">Etec de Itaquera</h3>
+              <p class="text-sm text-muted">Desenvolvimento de Sistemas</p>
+            </div>
+
+            <!-- Marco 2: CASSI -->
+            <div class="flex flex-col items-start pl-6">
+              <span class="w-3 h-3 rounded-full bg-accent ring-4 ring-void mb-6 shadow-[0_0_10px_theme('colors.accent.glow')]"></span>
+              <span class="text-xs font-mono text-muted mb-1">Experiência Corporativa • Atual</span>
+              <h3 class="font-display text-lg font-bold text-primary mb-1">CASSI</h3>
+              <p class="text-sm text-muted">Jovem Aprendiz (Gerência Técnica)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha do Tempo Mobile: Vertical com linha fina que se desenha -->
+        <div class="md:hidden relative pl-8">
+          <!-- Linha vertical base de fundo -->
+          <div class="absolute top-2.5 left-1.5 w-[1px] h-[calc(100%-20px)] bg-border/60"></div>
+          <!-- Linha vertical que se desenha via scaleY -->
+          <div class="timeline-draw-line absolute top-2.5 left-1.5 w-[1px] h-[calc(100%-20px)] bg-accent/70"></div>
+
+          <div class="space-y-10">
+            <!-- Marco 1: Etec de Itaquera -->
+            <div class="relative">
+              <span class="absolute -left-8 top-1 w-3 h-3 rounded-full bg-accent ring-4 ring-void shadow-[0_0_10px_theme('colors.accent.glow')]"></span>
+              <span class="text-xs font-mono text-muted block mb-1">Ensino Médio Técnico • 2º ano</span>
+              <h3 class="font-display text-base font-bold text-primary">Etec de Itaquera</h3>
+              <p class="text-sm text-muted">Desenvolvimento de Sistemas</p>
+            </div>
+
+            <!-- Marco 2: CASSI -->
+            <div class="relative">
+              <span class="absolute -left-8 top-1 w-3 h-3 rounded-full bg-accent ring-4 ring-void shadow-[0_0_10px_theme('colors.accent.glow')]"></span>
+              <span class="text-xs font-mono text-muted block mb-1">Experiência Corporativa • Atual</span>
+              <h3 class="font-display text-base font-bold text-primary">CASSI</h3>
+              <p class="text-sm text-muted">Jovem Aprendiz (Gerência Técnica)</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
 
     <!-- ========================================================================
-         01. SEÇÃO TRAJETÓRIA (#trajetoria)
+         02. SEÇÃO TRAJETÓRIA (#trajetoria)
          ======================================================================== -->
     <section id="trajetoria" class="py-24 sm:py-32 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto border-t border-border">
       
       <!-- Cabeçalho da Seção -->
       <div data-reveal class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 sm:mb-20">
         <div>
-          <span class="text-xs uppercase font-mono tracking-widest text-accent block mb-3">01 / Trajetória</span>
+          <span class="text-xs uppercase font-mono tracking-widest text-accent block mb-3">02 / Trajetória</span>
           <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary">
             Formação técnica e prática corporativa.
           </h2>
@@ -367,14 +477,14 @@
     </section>
 
     <!-- ========================================================================
-         02. SEÇÃO STACK TECNOLÓGICA (#stack)
+         03. SEÇÃO STACK TECNOLÓGICA (#stack)
          ======================================================================== -->
     <section id="stack" class="py-24 sm:py-32 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto border-t border-border">
       
       <!-- Cabeçalho -->
       <div data-reveal class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 sm:mb-20">
         <div>
-          <span class="text-xs uppercase font-mono tracking-widest text-accent block mb-3">02 / Stack Tecnológica</span>
+          <span class="text-xs uppercase font-mono tracking-widest text-accent block mb-3">03 / Stack Tecnológica</span>
           <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary">
             Linguagens, dados e engenharia.
           </h2>
@@ -469,14 +579,14 @@
     </section>
 
     <!-- ========================================================================
-         03. SEÇÃO CERTIFICAÇÕES (#certificacoes)
+         04. SEÇÃO CERTIFICAÇÕES (#certificacoes)
          ======================================================================== -->
     <section id="certificacoes" class="py-24 sm:py-32 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto border-t border-border">
       
       <!-- Cabeçalho -->
       <div data-reveal class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 sm:mb-20">
         <div>
-          <span class="text-xs uppercase font-mono tracking-widest text-accent block mb-3">03 / Certificações</span>
+          <span class="text-xs uppercase font-mono tracking-widest text-accent block mb-3">04 / Certificações</span>
           <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary">
             Educação continuada e extensões.
           </h2>
@@ -605,7 +715,7 @@
     </section>
 
     <!-- ========================================================================
-         04. SEÇÃO CONTATO (#contato)
+         05. SEÇÃO CONTATO (#contato)
          ======================================================================== -->
     <section id="contato" class="py-24 sm:py-32 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto border-t border-border">
       
@@ -613,7 +723,7 @@
         
         <!-- Chamada de Alto Impacto -->
         <div data-reveal class="lg:col-span-7">
-          <span class="text-xs uppercase font-mono tracking-widest text-accent block mb-3">04 / Contato</span>
+          <span class="text-xs uppercase font-mono tracking-widest text-accent block mb-3">05 / Contato</span>
           <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-primary leading-tight mb-6">
             Pronto para agregar valor técnico à sua equipe.
           </h2>

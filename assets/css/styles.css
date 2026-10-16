@@ -55,6 +55,29 @@
 [data-reveal-delay="400"] { transition-delay: 400ms; }
 [data-reveal-delay="500"] { transition-delay: 500ms; }
 
+/* Linha do tempo minimalista que se desenha no scroll */
+.timeline-draw-line {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+[data-reveal].is-revealed .timeline-draw-line {
+  transform: scaleX(1);
+}
+
+@media (max-width: 767px) {
+  .timeline-draw-line {
+    transform-origin: top center;
+    transform: scaleY(0);
+  }
+
+  [data-reveal].is-revealed .timeline-draw-line {
+    transform: scaleY(1);
+  }
+}
+
 /* 5. Cursor personalizado tátil (Desktop com mouse) */
 @media (hover: hover) and (pointer: fine) {
   body {
@@ -120,6 +143,11 @@
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .timeline-draw-line {
+    transform: none !important;
+    transition: none !important;
   }
 
   .custom-cursor-dot,
